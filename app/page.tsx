@@ -1,0 +1,37 @@
+import { SiteHeader } from "@/components/site-header"
+import { Hero } from "@/components/hero"
+import { Stats } from "@/components/stats"
+import { WhyUs } from "@/components/why-us"
+import { SupportedSoftware } from "@/components/supported-software"
+import { HowItWorks } from "@/components/how-it-works"
+import { RemoteTools } from "@/components/remote-tools"
+import { Features } from "@/components/features"
+import { Testimonials } from "@/components/testimonials"
+import { Pricing } from "@/components/pricing"
+import { Faq } from "@/components/faq"
+import { FinalCta } from "@/components/final-cta"
+import { SiteFooter } from "@/components/site-footer"
+import { WhatsappFab } from "@/components/whatsapp-fab"
+
+export default function HomePage() {
+  return (
+    <>
+      <SiteHeader />
+      <main>
+        <Hero />
+        <Stats />
+        <WhyUs />
+        <SupportedSoftware />
+        <HowItWorks />
+        <RemoteTools />
+        <Features />
+        <Testimonials />
+        <Pricing />
+        <Faq />
+        <FinalCta />
+      </main>
+      <SiteFooter />
+      <WhatsappFab />
+    </>
+  )
+}

@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Program Kurdurmak | Uzaktan Program Kurulumu | Program Kurma Hizmeti | ProgramKur.com.tr</title>
+<meta name="description" content="Program kurdurmak istiyorum mu? Profesyonel uzaktan program kurulumu hizmetleri. AutoCAD, Revit, Office ve 100+ program kurdurmak için hızlı, güvenilir ve garantili çözüm. Hemen WhatsApp'ta destek alın."/>
+<meta name="keywords" content="program kurdurmak, program kurulumu, program kurma, uzaktan program kurulumu, program kurdurmak istiyorum, teknik destek, autocad kurulumu, revit kurulumu, office kurulumu, yazılım kurulumu, program kur, program kurma hizmeti, bilgisayar program kurulumu"/>
+<link rel="canonical" href="https://www.programkur.com.tr/"/>
+<link rel="icon" type="image/png" href="/favicon.png" sizes="32x32"/>
+<link rel="icon" type="image/png" href="/favicon.png" sizes="16x16"/>
+<link rel="apple-touch-icon" href="/favicon.png"/>
+<meta name="theme-color" content="#1e40af"/>
+
+<style>
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {  
+  --primary: #1e40af;
+  --primary-light: #3b82f6;
+  --primary-dark: #1e3a8a;
+  --secondary: #10b981;
+  --success: #059669;
+  --accent: #f59e0b;
+  --danger: #ef4444;
+  --dark: #0f172a;
+  --dark-light: #1e293b;
+  --light: #f8fafc;
+  --text: #0f172a;
+  --text-light: #64748b;
+  --border: #e2e8f0;
+  --shadow: 0 10px 40px rgba(15, 23, 42, 0.1);
+  --shadow-lg: 0 20px 60px rgba(15, 23, 42, 0.15);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  color: var(--text);
+  background: var(--light);
+  line-height: 1.6;
+}
+
+/* ========== HEADER & NAVIGATION ========== */
+header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+.header-cta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.remote-links {
+  display: flex;
+  gap: 8px;
+}
+
+.remote-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.remote-btn img {
+  width: 16px;
+  height: 16px;
+}
+
+.btn-anydesk { background: #EF3B2D; }
+.btn-teamviewer { background: #0E6DB7; }
+
+.remote-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(30, 64, 175, 0.3);
+}
+
+.btn-whatsapp {
+  background: var(--secondary);
+  color: #fff;
+  font-size: 1rem;
+  padding: 12px 24px;
+}
+
+.btn-whatsapp:hover {
+  background: var(--success);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(16, 185, 129, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+  background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 50%, var(--primary-dark) 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 60px 20px;
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(59,130,246,0.05)" stroke-width="1"/></pattern></defs><rect width="1200" height="600" fill="url(%23grid)"/></svg>');
+  opacity: 0.5;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 900px;
+  text-align: center;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 7vw, 3.5rem);
+  font-weight: 900;
+  margin-bottom: 12px;
+  line-height: 1.2;
+  background: linear-gradient(135deg, #fff 0%, #e0e7ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.price-badge {
+  display: inline-block;
+  background: rgba(16, 185, 129, 0.2);
+  border: 2px solid var(--secondary);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 32px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+.hero-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.hero-cta .btn-whatsapp {
+  font-size: 1.1rem;
+  padding: 16px 40px;
+  box-shadow: 0 12px 40px rgba(16, 185, 129, 0.4);
+}
+
+.hero-cta .btn-whatsapp:hover {
+  box-shadow: 0 16px 50px rgba(16, 185, 129, 0.6);
+}
+
+.hero-subtitle {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.8);
+  margin-top: 16px;
+}
+
+/* ========== QUICK STATS ========== */
+.quick-stats {
+  background: #fff;
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: -40px auto 0;
+  position: relative;
+  z-index: 20;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.stat-item {
+  text-align: center;
+  padding: 20px;
+}
+
+.stat-icon {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+/* ========== HOW IT WORKS ========== */
+.how-it-works {
+  padding: 80px 20px;
+  background: var(--light);
+}
+
+.how-it-works-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.section-title p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+}
+
+.step-card {
+  background: #fff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  border: 2px solid var(--border);
+  text-align: center;
+  position: relative;
+}
+
+.step-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow);
+  border-color: var(--primary);
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin: 0 auto 16px;
+}
+
+.step-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.step-card p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ========== PRICING SECTION ========== */
+.pricing {
+  padding: 80px 20px;
+  background: #fff;
+}
+
+.pricing-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.05) 0%, rgba(16, 185, 129, 0.05) 100%);
+  padding: 40px;
+  border-radius: 16px;
+  border: 2px solid var(--border);
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow);
+  transform: translateY(-8px);
+}
+
+.pricing-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--text);
+}
+
+.price-display {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.price-currency {
+  font-size: 1.2rem;
+  color: var(--text-light);
+}
+
+.price-description {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.price-features {
+  list-style: none;
+  margin-bottom: 32px;
+  text-align: left;
+}
+
+.price-features li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price-features li:before {
+  content: '✅';
+  font-size: 1.2rem;
+}
+
+.price-features li:last-child {
+  border-bottom: none;
+}
+
+/* ========== TRUST SECTION ========== */
+.trust {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.05) 0%, rgba(16, 185, 129, 0.05) 100%);
+}
+
+.trust-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+}
+
+.trust-card {
+  background: #fff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.trust-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.trust-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.trust-card p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ========== FAQ SECTION ========== */
+.faq {
+  padding: 80px 20px;
+  background: var(--light);
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: #fff;
+  padding: 24px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: var(--shadow);
+  border-color: var(--primary);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.faq-toggle {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-toggle {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  display: none;
+  margin-top: 16px;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+/* ========== CTA SECTION ========== */
+.final-cta {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--success) 100%);
+  padding: 60px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.final-cta h2 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+
+.final-cta p {
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.95;
+}
+
+.final-cta .btn-whatsapp {
+  background: #fff;
+  color: var(--secondary);
+  font-size: 1.1rem;
+  padding: 16px 40px;
+}
+
+.final-cta .btn-whatsapp:hover {
+  background: rgba(255,255,255,0.9);
+}
+
+/* ========== FLOATING WHATSAPP BUTTON ========== */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  z-index: 999;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.floating-whatsapp img {
+  width: 35px;
+  height: 35px;
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.15) translateY(-10px);
+  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.6);
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background: var(--dark);
+  color: #fff;
+  padding: 60px 20px 40px;
+  font-size: 0.9rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-section h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.footer-section a:hover {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+}
+
+.footer-info {
+  margin-bottom: 20px;
+}
+
+.footer-info p {
+  margin-bottom: 8px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+}
+
+.footer-info strong {
+  color: #fff;
+}
+
+.footer-links {
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin: 0 8px;
+  font-size: 0.85rem;
+}
+
+.footer-links a:hover {
+  color: var(--secondary);
+}
+
+.footer-copyright {
+  opacity: 0.7;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+footer a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--secondary);
+}
+
+/* ========== POPULAR PROGRAMS SECTION ========== */
+.popular-programs {
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.popular-programs-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.program-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: var(--light);
+  border-radius: 12px;
+  border: 2px solid var(--border);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  min-height: 140px;
+}
+
+.program-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 8px 24px rgba(30, 64, 175, 0.15);
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.05) 0%, rgba(16, 185, 129, 0.05) 100%);
+}
+
+.program-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.program-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ========== PROGRAM KURDURMAK ISTIYORUM SECTION ========== */
+.program-kurdurmak-section {
+  padding: 80px 20px;
+  background: var(--light);
+}
+
+.program-kurdurmak-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.program-kurdurmak-section .section-title h2 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.program-kurdurmak-section .section-title p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+.kurdurmak-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.feature-card {
+  background: #fff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  border: 2px solid var(--border);
+  text-align: left;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow);
+  border-color: var(--secondary);
+}
+
+.feature-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--primary);
+}
+
+.feature-card p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.kurdurmak-cta .btn-whatsapp {
+  font-size: 1.1rem;
+  padding: 16px 40px;
+  box-shadow: 0 12px 40px rgba(16, 185, 129, 0.4);
+}
+
+.kurdurmak-cta .btn-whatsapp:hover {
+  box-shadow: 0 16px 50px rgba(16, 185, 129, 0.6);
+}
+
+@media (max-width: 768px) {
+  .program-kurdurmak-section .section-title h2 {
+    font-size: 1.8rem;
+  }
+  .program-kurdurmak-section .section-title p {
+    font-size: 1rem;
+  }
+  .kurdurmak-features-grid {
+    grid-template-columns: 1fr;
+  }
+  .kurdurmak-cta .btn-whatsapp {
+    font-size: 1rem;
+    padding: 14px 30px;
+  }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  nav {
+    gap: 12px;
+    font-size: 0.85rem;
+  }
+  
+  .hero {
+    padding: 50px 20px;
+    min-height: 450px;
+  }
+  
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .price-display {
+    font-size: 2.8rem;
+  }
+  
+  .quick-stats {
+    grid-template-columns: 1fr;
+    margin-top: -30px;
+  }
+  
+  .floating-whatsapp {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .floating-whatsapp img {
+    width: 28px;
+    height: 28px;
+  }
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.programkur.com.tr",
+  "name": "ProgramKur.com.tr",
+  "description": "Program kurdurmak istiyorum mu? Profesyonel uzaktan program kurulumu ve teknik destek hizmetleri. AutoCAD, Revit, Office ve 100+ program kurdurmak için hızlı, güvenilir ve garantili çözüm. Program kurma ihtiyaçlarınız için hemen iletişime geçin.",
+  "url": "https://www.programkur.com.tr",
+  "logo": "https://www.programkur.com.tr/images/programkur.com.tr.png",
+  "telephone": "+905385050002",
+  "priceRange": "1000 TL",
+  "serviceType": "Yazılım Kurulum Hizmeti, Uzaktan Teknik Destek, Program Kurma, Program Kurdurmak, Program Kurulumu",
+  "areaServed": [
+    {
+      "@type": "State",
+      "name": "Türkiye"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Program Kurulum Hizmetleri",
+    "itemListElement": [
+      {
+        "@type": "OfferCatalog",
+        "name": "Tasarım ve Mühendislik Yazılımları Kurulumu",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AutoCAD Kurulumu"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Revit Kurulumu"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Lumion Kurulumu"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SolidWorks Kurulumu"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SketchUp Kurulumu"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "CorelDRAW Kurulumu"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Ofis ve Genel Yazılım Kurulumu",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Microsoft Office Kurulumu"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Adobe Creative Cloud Kurulumu"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Windows İşletim Sistemi Kurulumu"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "geo": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.9334,
+      "longitude": 32.8597
+    },
+    "geoRadius": 780000
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Service",
+    "telephone": "+905385050002",
+    "areaServed": "TR",
+    "availableLanguage": "Turkish"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "ratingCount": "500"
+  }
+},
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Nasıl Program Kurdurulur?",
+  "description": "Bilgisayarınıza uzaktan güvenli bir şekilde program kurdurmak için izlemeniz gereken adımlar.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "WhatsApp üzerinden iletişime geçin",
+      "text": "Kurulmasını istediğiniz programı WhatsApp hattımız üzerinden bize bildirin.",
+      "url": "https://www.programkur.com.tr/#nasil-calisir"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Uzaktan bağlantı sağlayın",
+      "text": "AnyDesk veya TeamViewer bilgilerini paylaşarak uzman ekibimizin bağlanmasına izin verin.",
+      "url": "https://www.programkur.com.tr/#nasil-calisir"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Kurulumu tamamlayın",
+      "text": "Uzman ekibimiz programı kurar ve aktivasyonunu yapar. İşlem bittiğinde ödemenizi yapın.",
+      "url": "https://www.programkur.com.tr/#nasil-calisir"
+    }
+  ],
+  "totalTime": "PT30M",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "TRY",
+    "value": "1000"
+  }
+}
+</script>
+</head>
+
+<body>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/905385050002?text=Merhaba%20ProgramKur.com.tr%20ekibi%2C%20program%20kurulumu%20hizmeti%20hakkında%20bilgi%20almak%20istiyorum." class="floating-whatsapp" title="WhatsApp Destek">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+<!-- HEADER -->
+<header>
+  <a href="/" class="logo">
+    <img src="/images/programkur.com.tr.png" alt="ProgramKur Logo">
+  </a>
+  
+  <nav>
+    <a href="#nasil-calisir">Nasıl Çalışır</a>
+    <a href="#fiyat">Fiyat</a>
+    <a href="#sss">SSS</a>
+  </nav>
+
+  <div class="header-cta">
+    <div class="remote-links">
+      <a href="/downloads/AnyDesk.exe" class="remote-btn btn-anydesk" title="AnyDesk İndir">
+        <img src="https://anydesk.com/favicon.ico" alt="AnyDesk"> AnyDesk
+      </a>
+      <a href="https://www.teamviewer.com/tr/download/windows/" class="remote-btn btn-teamviewer" title="TeamViewer İndir">
+        <img src="https://www.teamviewer.com/favicon.ico" alt="TeamViewer"> TeamViewer
+      </a>
+    </div>
+    <a href="https://wa.me/905385050002?text=Merhaba%20ProgramKur.com.tr%20ekibi%2C%20program%20kurulumu%20hizmeti%20hakkında%20bilgi%20almak%20istiyorum." class="btn btn-whatsapp">💬 WhatsApp</a>
+  </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Program Kurdurmak İçin Hızlı Çözüm - Uzaktan Teknik Destek</h1>
+    
+    <div class="price-badge">
+      ✅ Net Fiyat: 1000 TL
+    </div>
+    
+    <p>
+      <strong>Program kurdurmak</strong> istiyorsanız doğru yerdesiniz. Yazılım kurulumu ve program kurma hizmetleri. AutoCAD, Revit, Office ve 100+ program için uzaktan destek. <strong>Aynı gün destek</strong> garantisi. Hızlı çözüm, net fiyat, tam güven.
+    </p>
+<!-- PROGRAM KURDURMAK ISTIYORUM SECTION -->
+<section class="program-kurdurmak-section">
+  <div class="program-kurdurmak-container">
+    <div class="section-title">
+      <h2>Program Kurdurmak mı İstiyorsunuz? Doğru Yerdesiniz!</h2>
+      <p>Bilgisayarınıza program kurdurmak artık çok kolay. Uzman ekibimizle hızlı, güvenilir ve garantili program kurulumu hizmeti sunuyoruz. Hangi programı kurdurmak isterseniz isteyin, yanınızdayız.</p>
+    </div>
+    <div class="kurdurmak-features-grid">
+      <div class="feature-card">
+        <h3>Hızlı ve Uzaktan Kurulum</h3>
+        <p>Program kurdurmak için bilgisayarınızı bize getirmenize gerek yok. AnyDesk veya TeamViewer ile uzaktan bağlantı kurarak program kurulumunu anında gerçekleştiriyoruz.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Geniş Program Desteği</h3>
+        <p>AutoCAD, Revit, Office, Adobe CC, SolidWorks ve daha birçok programı kurdurmak için bize ulaşabilirsiniz. İhtiyacınız olan her türlü yazılım kurulumunda profesyonel destek sağlıyoruz.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Uygun Fiyat, Tam Güven</h3>
+        <p>Program kurdurmak için net ve şeffaf fiyatlandırma sunuyoruz. Gizli ücretler olmadan, sorun çözülmezse para iadesi garantisiyle tam güven sağlıyoruz.</p>
+      </div>
+    </div>
+    <div class="kurdurmak-cta">
+      <a href="https://wa.me/905385050002?text=Merhaba%20ProgramKur.com.tr%20ekibi%2C%20program%20kurdurmak%20istiyorum%20hizmeti%20hakkında%20bilgi%20almak%20istiyorum." class="btn btn-whatsapp">
+        💬 Program Kurdurmak İçin Hemen WhatsApp Destek Alın
+      </a>
+    </div>
+  </div>
+</section>
+    
+    <div class="hero-cta">
+      <a href="https://wa.me/905385050002?text=Merhaba%20ProgramKur.com.tr%20ekibi%2C%20program%20kurulumu%20hizmeti%20hakkında%20bilgi%20almak%20istiyorum." class="btn btn-whatsapp">
+        💬 WhatsApp'ta Hemen Başla
+      </a>
+      <p class="hero-subtitle">Ortalama yanıt süresi: 15 dakika</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK STATS -->
+<section class="quick-stats">
+  <div class="stat-item">
+    <div class="stat-icon">⚡</div>
+    <div class="stat-value">5 dk</div>
+    <div class="stat-label">Ortalama Yanıt</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-icon">✅</div>
+    <div class="stat-value">500+</div>
+    <div class="stat-label">Tamamlanan İş</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-icon">🎯</div>
+    <div class="stat-value">1000 TL</div>
+    <div class="stat-label">Net Fiyat</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-icon">🏆</div>
+    <div class="stat-value">5+ Yıl</div>
+    <div class="stat-label">Deneyim</div>
+  </div>
+</section>
+
+<!-- POPULAR PROGRAMS -->
+<section class="popular-programs">
+  <div class="popular-programs-container">
+    <div class="section-title">
+      <h2>Program Kurma Hizmetlerimiz - Hangi Programları Kurabiliyoruz?</h2>
+      <p>Profesyonel yazılımlardan ofis uygulamalarına kadar 100+ program kurulumu. Tüm program kurma ihtiyaçlarınız için uzaktan destek.</p>
+    </div>
+    
+    <div class="programs-grid">
+      <div class="program-card">
+        <img src="/images/autocad1.png" alt="AutoCAD" class="program-logo">
+        <div class="program-name">AutoCAD</div>
+      </div>
+      
+      <div class="program-card">
+        <img src="/images/revit1.png" alt="Revit" class="program-logo">
+        <div class="program-name">Revit</div>
+      </div>
+      
+      <div class="program-card">
+        <img src="/images/lumion1.png" alt="Lumion" class="program-logo">
+        <div class="program-name">Lumion</div>
+      </div>
+      
+      <div class="program-card">
+        <img src="/images/solidworks.png" alt="SolidWorks" class="program-logo">
+        <div class="program-name">SolidWorks</div>
+      </div>
+      
+      <div class="program-card">
+        <img src="/images/sketchup.png" alt="SketchUp" class="program-logo">
+        <div class="program-name">SketchUp</div>
+      </div>
+      
+      <div class="program-card">
+        <img src="/images/corel1.png" alt="CorelDRAW" class="program-logo">
+        <div class="program-name">CorelDRAW</div>
+      </div>
+      
+      <div class="program-card">
+        <img src="/images/office.png" alt="Microsoft Office" class="program-logo">
+        <div class="program-name">Office</div>
+      </div>
+      
+      <div class="program-card">
+        <img src="/images/adobe.png" alt="Adobe CC" class="program-logo">
+        <div class="program-name">Adobe CC</div>
+      </div>
+      
+      <div class="program-card">
+        <img src="/images/windows.png" alt="Windows" class="program-logo">
+        <div class="program-name">Windows</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works" id="nasil-calisir">
+  <div class="how-it-works-container">
+    <div class="section-title">
+      <h2>Program Kurulumu Nasıl Yapılır? 3 Adımda Çözüm</h2>
+      <p>Program kurma ve teknik destek işlemi basit, hızlı ve güvenilir. Soru işareti kalmayacak.</p>
+    </div>
+    
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h3>Program Kurulumu Talebinizi WhatsApp'ta Yazın</h3>
+        <p>Hangi programı kurmak istediğinizi veya hangi program kurma sorununu yaşadığınızı kısaca açıklayın.</p>
+      </div>
+      
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h3>Uzaktan Bağlantı ile Program Kuralım</h3>
+        <p>AnyDesk veya TeamViewer ile uzaktan bağlantı kurup program kurulumunu ve aktivasyonunu yapız. Aynı gün içinde tamamlanır.</p>
+      </div>
+      
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h3>Program Kurulumu Tamamlandı - Ödeme & Bitti</h3>
+        <p>Program kurulumu ve kurma işlemi başarıyla tamamlandı mı? Ödeme yapın (1000 TL). Tamamen güvenli ve garantili.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING SECTION -->
+<section class="pricing" id="fiyat">
+  <div class="pricing-container">
+    <div class="section-title">
+      <h2>Şeffaf Fiyatlandırma</h2>
+      <p>Gizli ücret yok. Tüm hizmetler bu fiyata dahil.</p>
+    </div>
+    
+    <div class="pricing-card">
+      <h3 class="pricing-title">Standart Program Kurulumu & Kurma Hizmeti</h3>
+      
+      <div>
+        <div class="price-display">1000</div>
+        <div class="price-currency">₺ (Türk Lirası)</div>
+      </div>
+      
+      <p class="price-description">
+        Herhangi bir programın tam kurulumu, aktivasyonu ve hata çözümü hizmeti. Program kurma işlemi için aynı gün destek garantisi.
+      </p>
+      
+      <ul class="price-features">
+        <li>Uzaktan kurulum (AnyDesk/TeamViewer)</li>
+        <li>Lisans aktivasyonu</li>
+        <li>Hata çözümü</li>
+        <li>Aynı gün destek</li>
+        <li>7 gün teknik destek</li>
+        <li>Sorun çözülmezse para iadesi</li>
+      </ul>
+      
+      <a href="https://wa.me/905385050002?text=Merhaba%20ProgramKur.com.tr%20ekibi%2C%20program%20kurulumu%20hizmeti%20hakkında%20bilgi%20almak%20istiyorum." class="btn btn-whatsapp">
+        💬 Şimdi Başla
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST SECTION -->
+<section class="trust">
+  <div class="trust-container">
+    <div class="section-title">
+      <h2>Neden Bize Güvenin?</h2>
+      <p>Binlerce müşteri bize güvenmiş ve sorunlarını çözmüş.</p>
+    </div>
+    
+    <div class="trust-grid">
+      <div class="trust-card">
+        <div class="trust-icon">🔒</div>
+        <h3>100% Güvenli</h3>
+        <p>Bilgileriniz tamamen gizli kalır. Sadece sorun çözmek için bağlantı kurarız.</p>
+      </div>
+      
+      <div class="trust-card">
+        <div class="trust-icon">⚡</div>
+        <h3>Hızlı Çözüm</h3>
+        <p>Ortalama 5 dakika içinde yanıt alırsınız. Sorun çözümü aynı gün tamamlanır.</p>
+      </div>
+      
+      <div class="trust-card">
+        <div class="trust-icon">💰</div>
+        <h3>Net Fiyat</h3>
+        <p>1000 TL. Başka ücret yok. Gizli maliyetler yok. Tamamen şeffaf.</p>
+      </div>
+      
+      <div class="trust-card">
+        <div class="trust-icon">✅</div>
+        <h3>Garantili</h3>
+        <p>Sorun çözülmezse para iadesi yapılır. Hiçbir risk yok.</p>
+      </div>
+      
+      <div class="trust-card">
+        <div class="trust-icon">🎯</div>
+        <h3>Uzman Ekip</h3>
+        <p>5+ yıl deneyim. 500+ başarılı kurulum. Profesyonel ve güvenilir.</p>
+      </div>
+      
+      <div class="trust-card">
+        <div class="trust-icon">📞</div>
+        <h3>7/24 Destek</h3>
+        <p>Haftanın 7 günü, günün 24 saati. Her zaman ulaşabilirsiniz.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq" id="sss">
+  <div class="faq-container">
+    <div class="section-title">
+      <h2>Sıkça Sorulan Sorular</h2>
+      <p>Aklınızdaki tüm soruların cevapları burada.</p>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Fiyat gerçekten 1000 TL mi? Başka ücret var mı?</span>
+        <span class="faq-toggle">▼</span>
+      </div>
+      <div class="faq-answer">
+        Evet, fiyat tam olarak 1000 TL'dir. Gizli ücret, ek maliyeti veya sürpriz ücret yoktur. Tüm hizmetler bu fiyata dahildir: kurulum, aktivasyon, hata çözümü ve 7 gün teknik destek.
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Aynı gün destek ne demek?</span>
+        <span class="faq-toggle">▼</span>
+      </div>
+      <div class="faq-answer">
+        Yazıp gönderdikten sonra ortalama 5 dakika içinde yanıt alırsınız. Sorun çözümü aynı gün tamamlanır. Eğer acil bir durum varsa, hemen bağlantı kurabiliriz.
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Bilgilerim güvenli mi?</span>
+        <span class="faq-toggle">▼</span>
+      </div>
+      <div class="faq-answer">
+        Evet, tamamen güvenlidir. Sadece sorunu çözmek için bağlantı kurarız. Bilgileriniz hiçbir zaman kaydedilmez, üçüncü taraflara verilmez. Bağlantı bittiğinde tüm veriler silinir.
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Sorun çözülmezse ne olur?</span>
+        <span class="faq-toggle">▼</span>
+      </div>
+      <div class="faq-answer">
+        Sorun çözülmezse, ödediğiniz 1000 TL tamamen iade edilir. Hiçbir soru sorulmaz, hiçbir koşul yoktur. Müşteri memnuniyeti bizim önceliğimiz.
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Hangi programları kurabilirsiniz?</span>
+        <span class="faq-toggle">▼</span>
+      </div>
+      <div class="faq-answer">
+        AutoCAD, Revit, Lumion, SolidWorks, SketchUp, Office, Adobe Creative Cloud, Antivirus yazılımları ve 100+ diğer profesyonel programlar. Emin değilseniz WhatsApp'ta sorun, cevaplarız.
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Ödeme nasıl yapılır?</span>
+        <span class="faq-toggle">▼</span>
+      </div>
+      <div class="faq-answer">
+        Sorun çözüldükten sonra ödeme yaparsınız. Banka transferi, kredi kartı veya WhatsApp Pay ile ödeme kabul ediyoruz. Ödeme işlemi 2 dakika içinde tamamlanır.
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Teknik destek ne kadar sürer?</span>
+        <span class="faq-toggle">▼</span>
+      </div>
+      <div class="faq-answer">
+        Kurulum sonrası 7 gün boyunca teknik destek alırsınız. Eğer sorun tekrar ortaya çıkarsa, hemen çözeriz. Ek ücret yoktur.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>Hala Tereddüt Mü?</h2>
+  <p>Hiç risk yok. Sorun çözülmezse para iadesi. 1000 TL, net fiyat, aynı gün destek. Şimdi başlayın.</p>
+  <a href="https://wa.me/905385050002?text=Merhaba%20ProgramKur.com.tr%20ekibi%2C%20program%20kurulumu%20hizmeti%20hakkında%20bilgi%20almak%20istiyorum." class="btn btn-whatsapp">
+    💬 WhatsApp'ta Hemen Yazın
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+    <!-- Footer Grid -->
+    <div class="footer-grid">
+      <!-- Hizmetler -->
+      <div class="footer-section">
+        <h2>Hizmetlerimiz</h2>
+        <ul>
+          <li><a href="/hizmetler/autocad-kurulum-hizmeti.html">AutoCAD Kurulumu</a></li>
+          <li><a href="/hizmetler/revit-kurulum-hizmeti.html">Revit Kurulumu</a></li>
+          <li><a href="/hizmetler/lumion-kurulum-hizmeti.html">Lumion Kurulumu</a></li>
+          <li><a href="/hizmetler/solidworks-kurulum-hizmeti.html">SolidWorks Kurulumu</a></li>
+          <li><a href="/hizmetler/sketchup-kurulum-hizmeti.html">SketchUp Kurulumu</a></li>
+          <li><a href="/hizmetler/mimarlik-programlari-kurulumu.html">Mimarlık Programları</a></li>
+          <li><a href="/hizmetler/uzaktan-program-kurulumu.html">Uzaktan Program Kurulumu</a></li>
+        </ul>
+      </div>
+
+      <!-- Yazılımlar -->
+      <div class="footer-section">
+        <h4>Desteklediğimiz Yazılımlar</h4>
+        <ul>
+          <li><a href="/hizmetler/autocad-kurulum-hizmeti.html">AutoCAD 2024, 2025, 2026</a></li>
+          <li><a href="/hizmetler/revit-kurulum-hizmeti.html">Revit 2024, 2025</a></li>
+          <li><a href="/hizmetler/lumion-kurulum-hizmeti.html">Lumion 14, 15</a></li>
+          <li><a href="/hizmetler/solidworks-kurulum-hizmeti.html">SolidWorks 2024, 2025</a></li>
+          <li><a href="/hizmetler/sketchup-kurulum-hizmeti.html">SketchUp Pro</a></li>
+          <li><a href="/hizmetler/mimarlik-programlari-kurulumu.html">Office 365, Adobe CC</a></li>
+          <li><a href="/hizmetler/mimarlik-programlari-kurulumu.html">Antivirus Yazılımları</a></li>
+        </ul>
+      </div>
+
+      <!-- Hata Çözümleri -->
+      <div class="footer-section">
+        <h4>Hata Çözümleri</h4>
+        <ul>
+          <li><a href="/hata-cozum/autocad-error-1603.html">Error 1603 Çözümü</a></li>
+          <li><a href="/hata-cozum/autocad-error-5.html">Error 5 Çözümü</a></li>
+          <li><a href="/hata-cozum/autocad-fatal-error.html">Fatal Error Çözümü</a></li>
+          <li><a href="/hata-cozum/autocad-acilmiyor.html">AutoCAD Açılmıyor</a></li>
+          <li><a href="/hata-cozum/adodis-hatasi-cozumu.html">ADODIS Hatası</a></li>
+          <li><a href="/hata-cozum/office-etkinlestirme-hatasi.html">Office Etkinleştirme Hatası</a></li>
+          <li><a href="/hata-cozum/revit-installation-failed.html">Revit Kurulum Hatası</a></li>
+        </ul>
+      </div>
+
+      <!-- Ek Hizmetler -->
+      <div class="footer-section">
+        <h4>Ek Hizmetler</h4>
+        <ul>
+          <li><a href="/hizmetler/index.html">Yazıcı Sürücüsü Kurulumu</a></li>
+          <li><a href="/hizmetler/index.html">Barkod Yazıcı Kurulumu</a></li>
+          <li><a href="/hizmetler/index.html">Mail Kurulumu (Outlook, Gmail)</a></li>
+          <li><a href="/hizmetler/index.html">Format Sonrası Program Kurulumu</a></li>
+          <li><a href="/lisans-key.html">Lisans Key Satışı</a></li>
+          <li><a href="/hizmetler/index.html">Sistem Optimizasyonu</a></li>
+          <li><a href="/makaleler/sistem-performans-sihirbazi.html">Sistem Performans Sihirbazı</a></li>
+        </ul>
+      </div>
+
+      <!-- Makaleler & Blog -->
+      <div class="footer-section">
+        <h4>Rehberler & Makaleler</h4>
+        <ul>
+          <li><a href="/makaleler/temiz-autocad-kurulumu.html">Temiz AutoCAD Kurulumu</a></li>
+          <li><a href="/makaleler/sistem-performans-sihirbazi.html">Sistem Performans Sihirbazı</a></li>
+          <li><a href="/blog/autocad-kurulumu.html">AutoCAD Kurulum Rehberi</a></li>
+          <li><a href="/blog/revit-kurulumu.html">Revit Kurulum Rehberi</a></li>
+          <li><a href="/blog/lumion-kurulumu.html">Lumion Kurulum Rehberi</a></li>
+          <li><a href="/blog/solidworks-kurulumu.html">SolidWorks Kurulum Rehberi</a></li>
+          <li><a href="/blog/barkod-yazici-kurulumu.html">Barkod Yazıcı Kurulumu</a></li>
+        </ul>
+      </div>
+
+      <!-- Karşılaştırmalar -->
+      <div class="footer-section">
+        <h4>Yazılım Karşılaştırmaları</h4>
+        <ul>
+          <li><a href="/makaleler/autocad-mi-revit-mi.html">AutoCAD vs Revit</a></li>
+          <li><a href="/makaleler/lumion-enscape-vray-karsilastirma.html">Lumion vs Enscape vs V-Ray</a></li>
+          <li><a href="/makaleler/coreldraw-illustrator-inkscape-karsilastirma.html">CorelDraw vs Illustrator</a></li>
+          <li><a href="/makaleler/lumion-neden-kasiyor.html">Lumion Neden Kasıyor?</a></li>
+          <li><a href="/makaleler/windows-format-sonrasi-programlar.html">Format Sonrası Program Kurulumu</a></li>
+          <li><a href="/blog/okul-meb-program-kurulumu.html">MEB Programları Kurulumu</a></li>
+          <li><a href="/blog/ebys-kurulumu.html">EBYS Kurulumu</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-info">
+        <p><strong>ProgramKur.com.tr</strong> - Türkiye'nin Uzaktan Program Kurulum Uzmanı</p>
+        <p>📞 <strong>+90 538 505 00 02</strong> | 7/24 Destek | Net Fiyat: 1000 TL | Aynı Gün Çözüm</p>
+        <p>AutoCAD, Revit, Lumion, SolidWorks, Office, Adobe ve 100+ program kurulumu. Hata çözümü. Lisans aktivasyonu.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">Gizlilik Politikası</a> | 
+        <a href="#">Kullanım Şartları</a> | 
+        <a href="#">İletişim</a> | 
+        <a href="https://wa.me/905385050002">WhatsApp Destek</a>
+      </div>
+      <!-- SEO & GEO Keywords -->
+      <div class="footer-seo-keywords" style="margin-top: 30px; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.8rem; color: rgba(255, 255, 255, 0.6); line-height: 1.8;">
+        <p><strong>Anahtar Kelimeler:</strong> Program kurulum hizmeti, uzaktan program kurulumu, AutoCAD kurulumu, Revit kurulumu, Lumion kurulumu, SolidWorks kurulumu, Office kurulumu, Adobe kurulumu, hata çözümü, lisans aktivasyonu, Error 1603, Fatal Error, ADODIS hatası, yazıcı sürücüsü kurulumu, barkod yazıcı kurulumu, mail kurulumu, sistem optimizasyonu, format sonrası program kurulumu, aynı gün destek, net fiyat 1000 TL, Türkiye program kurulum, İstanbul program kurulum, Ankara program kurulum, İzmir program kurulum, Bursa program kurulum, Antalya program kurulum, uzaktan bilgisayar tamiri, AnyDesk destek, TeamViewer destek, 7/24 destek, profesyonel kurulum, garantili kurulum, hızlı çözüm, sistem sihirbazı, performans testi.</p>
+      </div>
+
+      <div class="footer-copyright">
+        <p>&copy; 2026 ProgramKur.com.tr - Tüm Hakları Saklıdır</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// FAQ Toggle
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('click', function() {
+    this.classList.toggle('active');
+  });
+});
+
+// WhatsApp Link Helper
+function openWhatsApp(message) {
+  const encoded = encodeURIComponent(message);
+  window.location.href = `https://wa.me/905385050002?text=${encoded}`;
+}
+</script>
+
+</body>
+</html>
