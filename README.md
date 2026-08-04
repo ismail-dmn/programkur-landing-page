@@ -1,2 +1,2 @@
 # programkur.com.tr 
-link
+linkk
