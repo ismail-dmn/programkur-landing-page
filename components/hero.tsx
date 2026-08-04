@@ -25,7 +25,6 @@ const floatingCards = [
 
 const trustBadges = [
   { icon: Star, label: "4.9 Puan" },
-  { icon: Wrench, label: "10+ Desteklenen Yazılım" },
   { icon: CalendarCheck, label: "12+ Yıl Tecrübe" },
   { icon: MapPin, label: "Dünya Genelinde Hizmet" },
   { icon: Clock, label: "200+ Kurulum" },
