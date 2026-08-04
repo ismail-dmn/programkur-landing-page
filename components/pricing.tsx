@@ -7,7 +7,7 @@ const included = [
   "Uzaktan yazılım kurulumu",
   "Lisans & aktivasyon desteği",
   "Kurulum hatalarının giderilmesi",
-  "7 gün teknik destek",
+  "30 gün teknik destek",
   "Para iade garantisi",
 ]
 
