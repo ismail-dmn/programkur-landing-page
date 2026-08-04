@@ -13,6 +13,8 @@ import { Faq } from "@/components/faq"
 import { FinalCta } from "@/components/final-cta"
 import { SiteFooter } from "@/components/site-footer"
 import { WhatsappFab } from "@/components/whatsapp-fab"
+import { JsonLd } from "@/components/json-ld"
+import { getHomeJsonLd } from "@/lib/structured-data"
 
 export default function HomePage() {
   return (
@@ -34,6 +36,7 @@ export default function HomePage() {
       </main>
       <SiteFooter />
       <WhatsappFab />
+      <JsonLd data={getHomeJsonLd()} />
     </>
   )
 }

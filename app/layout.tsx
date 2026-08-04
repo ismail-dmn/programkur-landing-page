@@ -1,5 +1,13 @@
 import type { Metadata, Viewport } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
+import { JsonLd } from "@/components/json-ld"
+import {
+  DEFAULT_DESCRIPTION,
+  DEFAULT_TITLE,
+  SITE_NAME,
+  SITE_URL,
+} from "@/lib/site"
+import { getGlobalJsonLd } from "@/lib/structured-data"
 import "./globals.css"
 
 const geistSans = Geist({
@@ -14,20 +22,14 @@ const geistMono = Geist_Mono({
   display: "swap",
 })
 
-const siteUrl = "https://programkur.com.tr"
-const siteName = "ProgramKur.com.tr"
-const defaultTitle = "ProgramKur.com.tr | Uzaktan Yazılım Kurulum ve Teknik Destek"
-const defaultDescription =
-  "AutoCAD, Revit, SolidWorks, Office, Microsoft 365, Adobe ve Windows dahil 10'dan fazla program için Türkiye geneli aynı gün uzaktan kurulum, lisans aktivasyonu ve teknik destek. Ortalama 15 dakikada WhatsApp yanıtı, ödeme kurulum sonrası."
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: defaultTitle,
+    default: DEFAULT_TITLE,
     template: "%s | ProgramKur.com.tr",
   },
-  description: defaultDescription,
-  applicationName: siteName,
+  description: DEFAULT_DESCRIPTION,
+  applicationName: SITE_NAME,
   keywords: [
     "uzaktan program kurulumu",
     "program kurdurmak",
@@ -58,17 +60,17 @@ export const metadata: Metadata = {
     "İzmir program kurulumu",
     "Türkiye geneli yazılım kurulumu",
   ],
-  authors: [{ name: siteName, url: siteUrl }],
-  creator: siteName,
-  publisher: siteName,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
   category: "technology",
   alternates: { canonical: "/" },
   formatDetection: { telephone: true, email: true, address: false },
   openGraph: {
     type: "website",
     locale: "tr_TR",
-    url: siteUrl,
-    siteName,
+    url: SITE_URL,
+    siteName: SITE_NAME,
     title: "Türkiye'nin Uzaktan Yazılım Kurulum Uzmanı",
     description:
       "20'den fazla program için aynı gün uzaktan kurulum ve teknik destek. Hemen WhatsApp'tan yazın.",
@@ -99,263 +101,16 @@ export const viewport: Viewport = {
   initialScale: 1,
 }
 
-const telephone = "+905385050002"
-
-const services = [
-  "Microsoft Office Kurulumu",
-  "Microsoft 365 Kurulumu",
-  "OneDrive Kurulumu",
-  "SharePoint Kurulumu",
-  "Windows Kurulumu",
-  "AutoCAD Kurulumu",
-  "Rhino Kurulumu",
-  "V-Ray Kurulumu",
-  "SolidWorks Kurulumu",
-  "Lumion Kurulumu",
-  "Adobe Creative Cloud Kurulumu",
-  "Teknik Destek",
-]
-
-const reviews = [
-  {
-    author: "Mehmet Aksoy",
-    body: "AutoCAD ve Revit kurulumunu aynı gün içinde uzaktan hallettiler. Ofise gelmelerine gerek kalmadı, işlem sonrası ödeme yapmak da çok güven verdi.",
-  },
-  {
-    author: "Zeynep Yıldız",
-    body: "Lumion kurulumunda başka yerlerde çözülemeyen bir hatayı 15 dakikada çözdüler. Gerçekten işini bilen bir ekip. Kesinlikle tavsiye ederim.",
-  },
-  {
-    author: "Emre Demir",
-    body: "SolidWorks lisans aktivasyonumda takılmıştım. WhatsApp'tan yazdım, birkaç dakika içinde bağlandılar ve sorunu çözdüler. Süper hızlı.",
-  },
-]
-
-const aggregateRating = {
-  "@type": "AggregateRating",
-  ratingValue: "4.9",
-  reviewCount: "200",
-  bestRating: "5",
-  worstRating: "1",
-}
-
-const organizationId = `${siteUrl}/#organization`
-const websiteId = `${siteUrl}/#website`
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
-      "@id": organizationId,
-      name: siteName,
-      alternateName: "ProgramKur",
-      url: siteUrl,
-      description:
-        "Uzaktan yazılım kurulumu ve teknik destek hizmeti. AutoCAD, Revit, Lumion, SolidWorks, Office, Adobe, yazıcı ve tarayıcı programları dahil 20+ program.",
-      image: `${siteUrl}/opengraph-image`,
-      logo: {
-        "@type": "ImageObject",
-        url: `${siteUrl}/icon`,
-        width: 512,
-        height: 512,
-      },
-      telephone,
-      email: "destek@programkur.com.tr",
-      priceRange: "₺₺",
-      currenciesAccepted: "TRY",
-      areaServed: { "@type": "Country", name: "Türkiye" },
-      address: {
-        "@type": "PostalAddress",
-        addressCountry: "TR",
-      },
-      contactPoint: {
-        "@type": "ContactPoint",
-        telephone,
-        contactType: "customer service",
-        availableLanguage: ["Turkish"],
-        areaServed: "TR",
-      },
-      openingHoursSpecification: {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday",
-        ],
-        opens: "09:00",
-        closes: "22:00",
-      },
-      aggregateRating,
-      review: reviews.map((r) => ({
-        "@type": "Review",
-        author: { "@type": "Person", name: r.author },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-          bestRating: "5",
-        },
-        reviewBody: r.body,
-      })),
-    },
-    {
-      "@type": "WebSite",
-      "@id": websiteId,
-      url: siteUrl,
-      name: siteName,
-      description: defaultDescription,
-      inLanguage: "tr-TR",
-      publisher: { "@id": organizationId },
-      potentialAction: {
-        "@type": "SearchAction",
-        target: {
-          "@type": "EntryPoint",
-          urlTemplate: `${siteUrl}/?q={search_term_string}`,
-        },
-        "query-input": "required name=search_term_string",
-      },
-    },
-    {
-      "@type": "WebPage",
-      "@id": `${siteUrl}/#webpage`,
-      url: siteUrl,
-      name: defaultTitle,
-      description: defaultDescription,
-      inLanguage: "tr-TR",
-      isPartOf: { "@id": websiteId },
-      about: { "@id": organizationId },
-      primaryImageOfPage: `${siteUrl}/opengraph-image`,
-      breadcrumb: { "@id": `${siteUrl}/#breadcrumb` },
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": `${siteUrl}/#breadcrumb`,
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Ana Sayfa",
-          item: siteUrl,
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "Hizmetler",
-          item: `${siteUrl}/#hizmetler`,
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: "Fiyat",
-          item: `${siteUrl}/#fiyat`,
-        },
-        {
-          "@type": "ListItem",
-          position: 4,
-          name: "SSS",
-          item: `${siteUrl}/#sss`,
-        },
-      ],
-    },
-    {
-      "@type": "Service",
-      "@id": `${siteUrl}/#service`,
-      serviceType: "Uzaktan yazılım kurulumu ve teknik destek",
-      name: "Uzaktan Yazılım Kurulum Hizmeti",
-      description:
-        "Türkiye geneli uzaktan, aynı gün yazılım kurulumu, lisans aktivasyonu, yapılandırma ve teknik destek.",
-      provider: { "@id": organizationId },
-      areaServed: { "@type": "Country", name: "Türkiye" },
-      aggregateRating,
-      offers: {
-        "@type": "Offer",
-        price: "1000",
-        priceCurrency: "TRY",
-        description: "Tek yazılım kurulumu — aktivasyon, yapılandırma ve destek dahil.",
-        availability: "https://schema.org/InStock",
-      },
-      hasOfferCatalog: {
-        "@type": "OfferCatalog",
-        name: "Yazılım Kurulum Hizmetleri",
-        itemListElement: services.map((s) => ({
-          "@type": "Offer",
-          itemOffered: { "@type": "Service", name: s },
-        })),
-      },
-    },
-    {
-      "@type": "HowTo",
-      "@id": `${siteUrl}/#howto`,
-      name: "Uzaktan program nasıl kurdurulur?",
-      description:
-        "ProgramKur.com.tr ile uzaktan yazılım kurdurmanın beş adımı. Türkiye'nin her yerinden, aynı gün ve ödeme kurulum sonrası.",
-      totalTime: "PT45M",
-      estimatedCost: {
-        "@type": "MonetaryAmount",
-        currency: "TRY",
-        value: "1000",
-      },
-      supply: {
-        "@type": "HowToSupply",
-        name: "İnternet bağlantısı olan bir bilgisayar",
-      },
-      tool: {
-        "@type": "HowToTool",
-        name: "Şifreli uzaktan erişim uygulaması",
-      },
-      step: [
-        {
-          "@type": "HowToStep",
-          position: 1,
-          name: "WhatsApp'tan yazın",
-          text: "İhtiyacınız olan yazılımı ve durumu WhatsApp'tan iletin. Ortalama 15 dakikada dönüş yapılır.",
-        },
-        {
-          "@type": "HowToStep",
-          position: 2,
-          name: "Güvenli bağlantıyı onaylayın",
-          text: "Şifreli, KVKK uyumlu uzaktan erişim aracıyla bilgisayarınıza bağlanılır. Bağlantıyı siz başlatır ve dilediğiniz an sonlandırabilirsiniz.",
-        },
-        {
-          "@type": "HowToStep",
-          position: 3,
-          name: "Kurulum yapılır",
-          text: "Yazılım kurulur, lisans ve aktivasyon işlemleri eksiksiz tamamlanır.",
-        },
-        {
-          "@type": "HowToStep",
-          position: 4,
-          name: "Birlikte test edilir",
-          text: "Programın sorunsuz çalıştığı sizinle birlikte test edilir ve kontrol edilir.",
-        },
-        {
-          "@type": "HowToStep",
-          position: 5,
-          name: "Kurulum sonrası ödeme",
-          text: "Ödeme yalnızca işlem başarıyla tamamlandıktan sonra alınır. Sorun çözülmezse ücret alınmaz.",
-        },
-      ],
-    },
-  ],
-}
-
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode
-}) {
+}>) {
   return (
     <html lang="tr" className={`bg-background ${geistSans.variable} ${geistMono.variable}`}>
       <body className="font-sans antialiased">
         {children}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <JsonLd data={getGlobalJsonLd()} />
       </body>
     </html>
   )

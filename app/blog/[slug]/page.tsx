@@ -7,9 +7,14 @@ import { PageHero } from "@/components/page-hero"
 import { ContentBody } from "@/components/content-body"
 import { CtaBand } from "@/components/cta-band"
 import { getPost, posts } from "@/lib/content"
+import { ContentDocumentPage } from "@/components/content-document-page"
+import { getCollectionDocument, getStaticRouteParams } from "@/lib/content-engine"
+import { getContentMetadata } from "@/lib/seo"
 
 export function generateStaticParams() {
-  return posts.map((post) => ({ slug: post.slug }))
+  const legacyParams = posts.map((post) => ({ slug: post.slug }))
+  const markdownParams = getStaticRouteParams("blog")
+  return Array.from(new Map([...legacyParams, ...markdownParams].map((item) => [item.slug, item])).values())
 }
 
 export async function generateMetadata({
@@ -18,6 +23,9 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params
+  const markdownDocument = getCollectionDocument("blog", slug)
+  if (markdownDocument) return getContentMetadata(markdownDocument)
+
   const post = getPost(slug)
   if (!post) return {}
   return {
@@ -38,6 +46,9 @@ export default async function BlogDetailPage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
+  const markdownDocument = getCollectionDocument("blog", slug)
+  if (markdownDocument) return <ContentDocumentPage document={markdownDocument} />
+
   const post = getPost(slug)
   if (!post) notFound()
 

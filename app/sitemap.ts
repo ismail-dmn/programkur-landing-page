@@ -1,32 +1,15 @@
 import type { MetadataRoute } from "next"
+import { getSitemapEntries, getSitemapIds } from "@/lib/sitemap"
 
-const siteUrl = "https://programkur.com.tr"
+export function generateSitemaps() {
+  return getSitemapIds().map((id) => ({ id }))
+}
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date()
-
-  const sections = [
-    "neden-biz",
-    "yazilimlar",
-    "hizmetler",
-    "nasil-calisir",
-    "uzak-baglanti",
-    "fiyat",
-    "sss",
-  ]
-
-  return [
-    {
-      url: siteUrl,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    ...sections.map((id) => ({
-      url: `${siteUrl}/#${id}`,
-      lastModified,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    })),
-  ]
+export default async function sitemap({
+  id,
+}: {
+  id: Promise<string>
+}): Promise<MetadataRoute.Sitemap> {
+  const resolvedId = Number.parseInt(await id, 10)
+  return getSitemapEntries(Number.isNaN(resolvedId) ? 0 : resolvedId)
 }

@@ -1,9 +1,7 @@
 import type { MetadataRoute } from "next"
+import { SITE_URL } from "@/lib/site"
+import { getSitemapLocations } from "@/lib/sitemap"
 
-const siteUrl = "https://programkur.com.tr"
-
-// AI / answer-engine crawlers explicitly welcomed so ProgramKur.com.tr can be
-// cited and recommended by ChatGPT, Claude, Perplexity, Gemini, Copilot vb.
 const aiBots = [
   "GPTBot",
   "OAI-SearchBot",
@@ -26,19 +24,24 @@ const aiBots = [
   "YouBot",
 ]
 
+const publicRule = {
+  allow: "/",
+  disallow: ["/api/", "/_next/", "/content/"],
+}
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
         userAgent: "*",
-        allow: "/",
+        ...publicRule,
       },
       ...aiBots.map((userAgent) => ({
         userAgent,
-        allow: "/",
+        ...publicRule,
       })),
     ],
-    sitemap: `${siteUrl}/sitemap.xml`,
-    host: siteUrl,
+    sitemap: getSitemapLocations(),
+    host: SITE_URL,
   }
 }
