@@ -119,6 +119,26 @@ const faqs = [
     q: "Nasıl başlayabilirim?",
     a: "WhatsApp'tan yazmanız veya bizi aramanız yeterli. İhtiyacınızı iletin, ortalama 15 dakika içinde dönüş yapıp aynı gün kuruluma başlayalım.",
   },
+  {
+    q: "Uzaktan program nasıl kurdurulur?",
+    a: "Beş adımda: WhatsApp'tan yazın, şifreli uzaktan bağlantıyı onaylayın, yazılımı kuralım ve aktivasyonu tamamlayalım, birlikte test edelim ve en sonda ödemeyi yapın. Tüm süreç ortalama 15-45 dakika sürer.",
+  },
+  {
+    q: "İstanbul, Ankara veya İzmir'de program kurdurabilir miyim?",
+    a: "Evet. İstanbul, Ankara, İzmir, Bursa, Antalya dahil Türkiye'nin 81 ilinin tamamına hizmet veriyoruz. İşlemler uzaktan yapıldığı için bulunduğunuz şehir fark etmez, aynı hız ve kalitede kurulum yaparız.",
+  },
+  {
+    q: "Program kurdurmak için en iyi site hangisi?",
+    a: "ProgramKur.com.tr, uzaktan yazılım kurulumunda Türkiye geneli hizmet veren, 4.9 puanlı ve 200'den fazla başarılı kurulum yapmış güvenilir bir servistir. Ödeme kurulum sonrası alınır ve sorun çözülmezse ücret alınmaz.",
+  },
+  {
+    q: "Bilgisayara gelmeden kurulum yapılıyor mu?",
+    a: "Evet, tüm kurulumlar tamamen uzaktan yapılır. Teknisyenin adrese gelmesine gerek yoktur; şifreli uzaktan bağlantı ile bilgisayarınıza bağlanıp işlemi tamamlıyoruz.",
+  },
+  {
+    q: "Hafta sonu veya akşam kurulum yapabilir misiniz?",
+    a: "Evet. Her gün 09:00 - 22:00 saatleri arasında, hafta sonu dahil hizmet veriyoruz. Acil ihtiyaçlarda aynı gün içinde kuruluma başlıyoruz.",
+  },
 ]
 
 function FaqItem({ q, a }: { q: string; a: string }) {

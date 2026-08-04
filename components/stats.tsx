@@ -9,10 +9,10 @@ type Stat = {
 }
 
 const stats: Stat[] = [
- { value: 200, suffix: "+", label: "Başarılı Kurulum" },
-  { value: 20, suffix: "+", label: "Desteklenen Yazılım" },
-  { value: 98, suffix: "%", label: "Müşteri Memnuniyeti" },
-  { value: 15, suffix: " dk", label: "Ortalama İlk Yanıt" },
+  { value: 10, suffix: "+", label: "Desteklenen Yazılım" },
+  { value: 12, suffix: "+ Yıl", label: "Tecrübe" },
+  { text: "Dünya Geneli", label: "Hizmet Ağı" },
+  { value: 200, suffix: "+", label: "Başarılı Kurulum" },
 ]
 
 export function Stats() {

@@ -18,7 +18,7 @@ const siteUrl = "https://programkur.com.tr"
 const siteName = "ProgramKur.com.tr"
 const defaultTitle = "ProgramKur.com.tr | Uzaktan Yazılım Kurulum ve Teknik Destek"
 const defaultDescription =
-  "AutoCAD, Revit, Lumion, SolidWorks, Office, Adobe, yazıcı ve tarayıcı yazılımları dahil 20'den fazla program için aynı gün uzaktan kurulum ve teknik destek. Ortalama 15 dakikada WhatsApp yanıtı."
+  "AutoCAD, Revit, SolidWorks, Office, Microsoft 365, Adobe ve Windows dahil 10'dan fazla program için Türkiye geneli aynı gün uzaktan kurulum, lisans aktivasyonu ve teknik destek. Ortalama 15 dakikada WhatsApp yanıtı, ödeme kurulum sonrası."
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -31,15 +31,32 @@ export const metadata: Metadata = {
   keywords: [
     "uzaktan program kurulumu",
     "program kurdurmak",
+    "uzaktan yazılım kurulumu",
+    "program kurdurma servisi",
+    "program kurulum sitesi",
+    "online program kurulumu",
+    "uzaktan bağlantı ile kurulum",
     "AutoCAD kurulumu",
+    "AutoCAD kurdurmak",
     "Revit kurulumu",
     "Lumion kurulumu",
     "SolidWorks kurulumu",
+    "Rhino kurulumu",
+    "V-Ray kurulumu",
+    "SketchUp kurulumu",
     "Office kurulumu",
+    "Microsoft Office kurdurmak",
     "Microsoft 365 kurulumu",
+    "Windows kurulumu",
     "Adobe kurulumu",
+    "lisans aktivasyonu",
+    "aktivasyon hatası çözümü",
     "yazılım teknik destek",
     "uzaktan teknik destek",
+    "İstanbul program kurulumu",
+    "Ankara program kurulumu",
+    "İzmir program kurulumu",
+    "Türkiye geneli yazılım kurulumu",
   ],
   authors: [{ name: siteName, url: siteUrl }],
   creator: siteName,
@@ -269,6 +286,59 @@ const jsonLd = {
           itemOffered: { "@type": "Service", name: s },
         })),
       },
+    },
+    {
+      "@type": "HowTo",
+      "@id": `${siteUrl}/#howto`,
+      name: "Uzaktan program nasıl kurdurulur?",
+      description:
+        "ProgramKur.com.tr ile uzaktan yazılım kurdurmanın beş adımı. Türkiye'nin her yerinden, aynı gün ve ödeme kurulum sonrası.",
+      totalTime: "PT45M",
+      estimatedCost: {
+        "@type": "MonetaryAmount",
+        currency: "TRY",
+        value: "1000",
+      },
+      supply: {
+        "@type": "HowToSupply",
+        name: "İnternet bağlantısı olan bir bilgisayar",
+      },
+      tool: {
+        "@type": "HowToTool",
+        name: "Şifreli uzaktan erişim uygulaması",
+      },
+      step: [
+        {
+          "@type": "HowToStep",
+          position: 1,
+          name: "WhatsApp'tan yazın",
+          text: "İhtiyacınız olan yazılımı ve durumu WhatsApp'tan iletin. Ortalama 15 dakikada dönüş yapılır.",
+        },
+        {
+          "@type": "HowToStep",
+          position: 2,
+          name: "Güvenli bağlantıyı onaylayın",
+          text: "Şifreli, KVKK uyumlu uzaktan erişim aracıyla bilgisayarınıza bağlanılır. Bağlantıyı siz başlatır ve dilediğiniz an sonlandırabilirsiniz.",
+        },
+        {
+          "@type": "HowToStep",
+          position: 3,
+          name: "Kurulum yapılır",
+          text: "Yazılım kurulur, lisans ve aktivasyon işlemleri eksiksiz tamamlanır.",
+        },
+        {
+          "@type": "HowToStep",
+          position: 4,
+          name: "Birlikte test edilir",
+          text: "Programın sorunsuz çalıştığı sizinle birlikte test edilir ve kontrol edilir.",
+        },
+        {
+          "@type": "HowToStep",
+          position: 5,
+          name: "Kurulum sonrası ödeme",
+          text: "Ödeme yalnızca işlem başarıyla tamamlandıktan sonra alınır. Sorun çözülmezse ücret alınmaz.",
+        },
+      ],
     },
   ],
 }
