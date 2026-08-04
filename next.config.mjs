@@ -2,9 +2,11 @@
 const nextConfig = {
   poweredByHeader: false,
   compress: true,
+
   images: {
     formats: ["image/avif", "image/webp"],
   },
+
   async headers() {
     return [
       {
@@ -21,6 +23,36 @@ const nextConfig = {
             value: "camera=(), microphone=(), geolocation=()",
           },
         ],
+      },
+    ]
+  },
+
+  async redirects() {
+    return [
+      {
+        source: "/lisans-key.html",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/hizmetler/:path*",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/hata-cozum/:path*",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/blog/:path*",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/makaleler/:path*",
+        destination: "/",
+        permanent: true,
       },
     ]
   },
