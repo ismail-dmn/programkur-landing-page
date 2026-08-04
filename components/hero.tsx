@@ -35,7 +35,10 @@ const softwareTabs = ["AutoCAD", "Lumion", "Revit", "SolidWorks", "Office", "Ado
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-28 md:pt-32 lg:pt-36">
+    <section
+      aria-label="Uzaktan program kurulumu — özet ve iletişim"
+      className="relative overflow-hidden pt-28 md:pt-32 lg:pt-36"
+    >
       {/* background accents */}
       <div className="pointer-events-none absolute inset-0 bg-grid opacity-70" aria-hidden="true" />
       <div
