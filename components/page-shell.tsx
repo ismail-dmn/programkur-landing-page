@@ -24,23 +24,31 @@ export function PageShell({
                 Ana Sayfa
               </Link>
             </li>
-            {crumbs.map((crumb, i) => (
-              <li key={crumb.label} className="flex items-center gap-1.5">
-                <ChevronRight className="size-3.5 text-muted-foreground/60" aria-hidden="true" />
-                {crumb.href && i !== crumbs.length - 1 ? (
-                  <Link
-                    href={crumb.href}
-                    className="text-muted-foreground transition-colors hover:text-primary"
-                  >
-                    {crumb.label}
-                  </Link>
-                ) : (
-                  <span className="font-medium text-navy" aria-current="page">
-                    {crumb.label}
-                  </span>
-                )}
-              </li>
-            ))}
+            {crumbs.map((crumb, i) => {
+              const isLinkable = Boolean(crumb.href) && i !== crumbs.length - 1
+              const href = crumb.href
+                ? crumb.href.startsWith("/") || crumb.href.startsWith("http")
+                  ? crumb.href
+                  : `/#${crumb.href.replace(/^#/, "")}`
+                : ""
+              return (
+                <li key={crumb.label} className="flex items-center gap-1.5">
+                  <ChevronRight className="size-3.5 text-muted-foreground/60" aria-hidden="true" />
+                  {isLinkable ? (
+                    <Link
+                      href={href}
+                      className="text-muted-foreground transition-colors hover:text-primary"
+                    >
+                      {crumb.label}
+                    </Link>
+                  ) : (
+                    <span className="font-medium text-navy" aria-current="page">
+                      {crumb.label}
+                    </span>
+                  )}
+                </li>
+              )
+            })}
           </ol>
         </nav>
         {children}

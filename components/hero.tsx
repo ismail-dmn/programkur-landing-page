@@ -121,7 +121,7 @@ export function Hero() {
               Telefon
             </a>
             <a
-              href="#fiyat"
+              href="/#fiyat"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-background px-6 py-3.5 text-base font-semibold text-navy transition-all hover:border-navy/20 hover:bg-muted"
             >
               <FileText className="size-5 text-primary" aria-hidden="true" />

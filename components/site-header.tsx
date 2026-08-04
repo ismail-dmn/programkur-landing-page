@@ -2,15 +2,16 @@
 
 import { useEffect, useState } from "react"
 import { Menu, X, MessageCircle, TerminalSquare } from "lucide-react"
+import Link from "next/link"
 import { cn, whatsappLink } from "@/lib/utils"
 
 const navLinks = [
-  { href: "#neden-biz", label: "Neden Biz" },
-  { href: "#yazilimlar", label: "Yazılımlar" },
-  { href: "#nasil-calisir", label: "Nasıl Çalışır" },
-  { href: "#uzak-baglanti", label: "Uzak Bağlantı" },
-  { href: "#fiyat", label: "Fiyat" },
-  { href: "#sss", label: "SSS" },
+  { href: "/#neden-biz", label: "Neden Biz" },
+  { href: "/#yazilimlar", label: "Yazılımlar" },
+  { href: "/#nasil-calisir", label: "Nasıl Çalışır" },
+  { href: "/#uzak-baglanti", label: "Uzak Bağlantı" },
+  { href: "/#fiyat", label: "Fiyat" },
+  { href: "/#sss", label: "SSS" },
 ]
 
 export function SiteHeader() {
@@ -34,24 +35,24 @@ export function SiteHeader() {
       )}
     >
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-5 md:h-18 lg:px-8">
-        <a href="#" className="flex items-center gap-2.5" aria-label="ProgramKur.com.tr ana sayfa">
+        <Link href="/" className="flex items-center gap-2.5" aria-label="ProgramKur.com.tr ana sayfa">
           <span className="flex size-9 items-center justify-center rounded-xl bg-navy text-primary-foreground">
             <TerminalSquare className="size-5 text-cyan-light" aria-hidden="true" />
           </span>
           <span className="text-lg font-semibold tracking-tight text-navy">
             ProgramKur<span className="text-primary">.</span>
           </span>
-        </a>
+        </Link>
 
         <ul className="hidden items-center gap-1 lg:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <a
+              <Link
                 href={link.href}
                 className="rounded-lg px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-navy"
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -90,13 +91,13 @@ export function SiteHeader() {
           <ul className="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-4">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a
+                <Link
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className="block rounded-lg px-3 py-2.5 text-base font-medium text-navy transition-colors hover:bg-muted"
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
             <li className="mt-2">

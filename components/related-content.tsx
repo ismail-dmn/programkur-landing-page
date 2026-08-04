@@ -20,7 +20,7 @@ export function RelatedContent({ groups }: { groups: RelatedContentGroup[] }) {
               {group.documents.map((document) => (
                 <li key={document.id}>
                   <Link
-                    href={document.pathname}
+                    href={document.pathname.startsWith("/") ? document.pathname : `/${document.pathname}`}
                     className="group flex items-center justify-between gap-4 rounded-2xl border border-border bg-card px-5 py-4 transition-colors hover:border-primary/30"
                   >
                     <span className="text-[15px] font-medium text-navy">{document.title}</span>

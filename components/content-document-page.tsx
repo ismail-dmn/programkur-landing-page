@@ -5,6 +5,7 @@ import { PageHero } from "@/components/page-hero"
 import { PageShell } from "@/components/page-shell"
 import { RelatedContent } from "@/components/related-content"
 import { ContentBody } from "@/components/content-body"
+import { getDocumentMetaLinks } from "@/components/content-meta-links"
 import {
   getCollectionLabel,
   getContentSource,
@@ -24,11 +25,14 @@ function formatDate(value?: string) {
 
 export async function ContentDocumentPage({ document }: { document: ContentDocument }) {
   const updated = formatDate(document.lastModified)
-  const meta = [
+  const metaLinks = getDocumentMetaLinks(document)
+
+  const updatedText = updated ? { label: "Güncellenme", value: updated } : undefined
+  const textMeta = [
     document.software ? { label: "Yazılım", value: document.software } : undefined,
     document.service ? { label: "Hizmet", value: document.service } : undefined,
     document.city ? { label: "Şehir", value: document.city } : undefined,
-    updated ? { label: "Güncellenme", value: updated } : undefined,
+    updatedText,
   ].filter((item): item is { label: string; value: string } => Boolean(item))
 
   const faqs = document.faq.map((item) => ({ q: item.question, a: item.answer }))
@@ -43,7 +47,7 @@ export async function ContentDocumentPage({ document }: { document: ContentDocum
         eyebrow={eyebrow}
         title={document.title}
         description={document.description}
-        meta={meta}
+        meta={textMeta}
         whatsappMessage={`Merhaba, "${document.title}" konusu için destek almak istiyorum.`}
       />
 

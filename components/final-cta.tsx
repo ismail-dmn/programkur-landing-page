@@ -55,7 +55,7 @@ export function FinalCta() {
                 Telefon
               </a>
               <a
-                href="#fiyat"
+                href="/#fiyat"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-7 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/10 sm:w-auto"
               >
                 <FileText className="size-5" aria-hidden="true" />

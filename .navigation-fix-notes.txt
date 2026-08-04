@@ -1,0 +1,10 @@
+# Navigation fix verification notes
+
+All navigation links now use absolute paths starting with `/`:
+- Header links: /#neden-biz, /#yazilimlar, /#nasil-calisir, /#uzak-baglanti, /#fiyat, /#sss
+- Breadcrumbs: /hizmetler
+- Footer links: all absolute
+- Logo: /
+
+This fixes the issue where clicking links from nested content routes would append to the current path
+instead of navigating from the root.
