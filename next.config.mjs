@@ -49,11 +49,6 @@ const nextConfig = {
         destination: "/",
         permanent: true,
       },
-      {
-        source: "/makaleler/:path*",
-        destination: "/",
-        permanent: true,
-      },
     ]
   },
 }
