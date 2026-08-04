@@ -25,10 +25,10 @@ const floatingCards = [
 
 const trustBadges = [
   { icon: Star, label: "4.9 Puan" },
-  { icon: Wrench, label: "7000+ Kurulum" },
-  { icon: CalendarCheck, label: "6+ Yıl Tecrübe" },
-  { icon: MapPin, label: "Türkiye Geneli Hizmet" },
-  { icon: Clock, label: "Aynı Gün Destek" },
+  { icon: Wrench, label: "10+ Desteklenen Yazılım" },
+  { icon: CalendarCheck, label: "12+ Yıl Tecrübe" },
+  { icon: MapPin, label: "Dünya Genelinde Hizmet" },
+  { icon: Clock, label: "200+ Kurulum" },
 ]
 
 const softwareTabs = ["AutoCAD", "Lumion", "Revit", "SolidWorks", "Office", "Adobe"]
