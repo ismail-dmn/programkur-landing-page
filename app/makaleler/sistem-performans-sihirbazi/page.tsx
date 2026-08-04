@@ -175,8 +175,9 @@ export default function WizardPage() {
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="mb-12 text-center">
             <SectionHeading
+              eyebrow="Performans Analizi"
               title="Sistem Performans Sihirbazı"
-              subtitle="İşlemcinizi, ekran kartınızı, RAM ve diskinizi seçin — AutoCAD, Revit, Lumion ve daha fazlası için anlık uyumluluk skoru alın."
+              description="İşlemcinizi, ekran kartınızı, RAM ve diskinizi seçin — AutoCAD, Revit, Lumion ve daha fazlası için anlık uyumluluk skoru alın."
             />
           </div>
 
