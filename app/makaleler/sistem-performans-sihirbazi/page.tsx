@@ -166,9 +166,12 @@ export default function WizardPage() {
   }
 
   return (
-    <PageShell>
-      <SiteHeader />
-      <main className="pt-24 pb-16">
+    <PageShell
+      crumbs={[
+        { label: "Sihirbaz" }
+      ]}
+    >
+      <main className="pb-16">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="mb-12 text-center">
             <SectionHeading
@@ -438,7 +441,6 @@ export default function WizardPage() {
           </div>
         </div>
       </main>
-      <SiteFooter />
     </PageShell>
   )
 }
