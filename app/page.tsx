@@ -3,6 +3,7 @@ import { Hero } from "@/components/hero"
 import { Stats } from "@/components/stats"
 import { WhyUs } from "@/components/why-us"
 import { SupportedSoftware } from "@/components/supported-software"
+import { Services } from "@/components/services"
 import { HowItWorks } from "@/components/how-it-works"
 import { RemoteTools } from "@/components/remote-tools"
 import { Features } from "@/components/features"
@@ -22,6 +23,7 @@ export default function HomePage() {
         <Stats />
         <WhyUs />
         <SupportedSoftware />
+        <Services />
         <HowItWorks />
         <RemoteTools />
         <Features />
