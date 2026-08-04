@@ -17,7 +17,7 @@ const tools = [
     color: "#0e8ee9",
     description:
       "Dünyaca kullanılan güvenli uzaktan destek aracı. QuickSupport sürümü kurulum gerektirmez.",
-    href: "https://www.teamviewer.com/tr/indir/windows/",
+    href: "https://www.teamviewer.com/tr/download/windows/?",
   },
 ]
 
