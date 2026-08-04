@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Revit Installation Failed Hatası Çözümü | ProgramKur.com.tr</title>
+<meta name="description" content="Revit kurulumunda alınan 'Installation Failed' hatasının kesin çözümü. Material Library, VCRUNTIME ve lisans hataları için rehber."/>
+<meta name="keywords" content="revit installation failed, revit kurulum hatası, revit 2024 installation failed, revit material library kurulum hatası, revit yüklenemedi"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://www.programkur.com.tr/hata-cozum/revit-installation-failed.html"/>
+<meta property="og:title" content="Revit Installation Failed Hatası Çözümü | ProgramKur.com.tr"/>
+<meta property="og:description" content="Revit kurulumunda alınan 'Installation Failed' hatasının kesin çözümü. Material Library, VCRUNTIME ve lisans hataları için rehber."/>
+<meta property="og:url" content="https://www.programkur.com.tr/hata-cozum/revit-installation-failed.html"/>
+<meta property="og:type" content="article"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://www.programkur.com.tr/"},
+        {"@type":"ListItem","position":2,"name":"Hata Çözümleri","item":"https://www.programkur.com.tr/hata-cozum/"},
+        {"@type":"ListItem","position":3,"name":"Revit Installation Failed Çözümü","item":"https://www.programkur.com.tr/hata-cozum/revit-installation-failed.html"}
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "Revit Installation Failed Çözümü",
+      "description": "Revit kurulumunda alınan 'Installation Failed' hatasının kesin çözümü. Material Library, VCRUNTIME ve lisans hataları için rehber.",
+      "author": {
+        "@type": "Organization",
+        "name": "ProgramKur Uzman Ekibi",
+        "url": "https://www.programkur.com.tr"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ProgramKur",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.programkur.com.tr/images/logo.png"
+        }
+      },
+      "mainEntityOfPage": "https://www.programkur.com.tr/hata-cozum/revit-installation-failed.html"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Revit kurulumu neden %97'de takılıyor?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Bu aşama genellikle Material Library veya lisanslama servisinin kurulduğu aşamadır. İnternet bağlantısı kesintileri veya antivirüs engellemeleri bu takılmaya neden olur."}
+      }
+      {
+        "@type": "Question",
+        "name": "Revit log dosyalarını nerede bulabilirim?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Klavyeden Windows+R tuşlarına basıp %temp% yazın. Açılan klasörde 'Autodesk_Revit' ile başlayan .log dosyalarını Not Defteri ile açıp 'Error' kelimesini aratın."}
+      }
+      {
+        "@type": "Question",
+        "name": "Uzaktan destek ile Revit kurulumu yapıyor musunuz?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Evet. Revit kurulum hatalarını çözüyor ve kurulumu eksiksiz olarak (kütüphaneler dahil) tamamlıyoruz."}
+      }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{--primary:#ef4444;--primary-dark:#dc2626;--dark:#1e293b;--bg:#f8fafc;--border:#e2e8f0;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:#334155;line-height:1.7;}
+.topbar{background:var(--dark);color:#fff;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;font-size:0.88rem;}
+.topbar a{color:#cbd5e1;text-decoration:none;}
+.topbar a:hover{color:#fff;}
+.hero{background:linear-gradient(135deg,var(--dark) 0%,#0f172a 100%);color:#fff;padding:60px 20px;text-align:center;border-bottom:4px solid var(--primary);}
+.hero .breadcrumb{font-size:0.82rem;color:#94a3b8;margin-bottom:16px;}
+.hero .breadcrumb a{color:#94a3b8;text-decoration:none;}
+.hero h1{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:900;margin-bottom:14px;color:#f8fafc;}
+.hero p{font-size:1.05rem;color:#cbd5e1;max-width:700px;margin:0 auto 24px;}
+.container{max-width:860px;margin:0 auto;padding:40px 20px;}
+.content-card{background:#fff;border-radius:12px;padding:32px;box-shadow:0 4px 6px -1px rgba(0,0,0,0.05);border:1px solid var(--border);margin-bottom:28px;}
+.content-card h2{font-size:1.4rem;font-weight:800;color:var(--dark);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.intro-text{font-size:1.05rem;color:#475569;margin-bottom:24px;}
+.step-card{background:#f8fafc;border:1px solid var(--border);border-radius:10px;margin-bottom:16px;overflow:hidden;}
+.step-header{background:#f1f5f9;padding:14px 20px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);}
+.step-num{background:var(--primary);color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.9rem;flex-shrink:0;}
+.step-title{font-size:1.1rem;font-weight:700;color:var(--dark);margin:0;}
+.step-body{padding:20px;font-size:0.95rem;}
+.step-body p{margin-bottom:10px;}
+.step-body ul{padding-left:20px;margin-bottom:10px;}
+.step-body code{background:#e2e8f0;padding:2px 6px;border-radius:4px;font-family:monospace;color:#b91c1c;}
+.warning-box{background:#fef2f2;border-left:4px solid var(--primary);padding:16px 20px;border-radius:0 8px 8px 0;margin:24px 0;font-size:0.95rem;color:#991b1b;}
+.cta-banner{background:#fff;border:2px dashed var(--primary);border-radius:12px;padding:24px;text-align:center;margin:32px 0;}
+.cta-banner h3{color:var(--dark);font-size:1.3rem;margin-bottom:10px;}
+.cta-banner p{color:#475569;margin-bottom:20px;}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{background:var(--primary);color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:800;font-size:1rem;}
+.btn-wa{background:#25d366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:800;font-size:1rem;}
+.btn-primary:hover{background:var(--primary-dark);}
+.btn-wa:hover{background:#1da851;}
+.faq-item{border:1px solid var(--border);border-radius:8px;margin-bottom:10px;}
+.faq-q{padding:14px 18px;cursor:pointer;font-weight:700;display:flex;justify-content:space-between;align-items:center;background:#fff;user-select:none;}
+.faq-a{padding:0 18px;max-height:0;overflow:hidden;transition:all 0.3s;background:#f8fafc;font-size:0.92rem;color:#475569;}
+.faq-item.open .faq-a{max-height:300px;padding:14px 18px;}
+.faq-arrow{transition:transform 0.3s;font-size:0.75rem;color:#94a3b8;}
+.faq-item.open .faq-arrow{transform:rotate(180deg);}
+.related-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+.rel-link{padding:8px 16px;background:#e2e8f0;color:#334155;border-radius:20px;text-decoration:none;font-size:0.85rem;font-weight:600;transition:all 0.2s;}
+.rel-link:hover{background:var(--dark);color:#fff;}
+footer{background:var(--dark);color:#94a3b8;text-align:center;padding:24px;font-size:0.85rem;}
+footer a{color:#cbd5e1;text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a href="https://www.programkur.com.tr/">← ProgramKur.com.tr</a>
+  <span>📞 <a href="tel:05385050002">0538 505 00 02</a></span>
+</div>
+
+<div class="hero">
+  <div class="breadcrumb">
+    <a href="https://www.programkur.com.tr/">Ana Sayfa</a> › 
+    <a href="https://www.programkur.com.tr/hata-cozum/">Hata Çözümleri</a> › 
+    Revit Installation Failed Çözümü
+  </div>
+  <h1>Revit Installation Failed Çözümü</h1>
+  <p>Revit kurulumu sırasında 'Installation Failed' veya 'Install error' alıyorsanız, bu rehberle sorunun kaynağını bulup çözebilirsiniz.</p>
+</div>
+
+<div class="container">
+  <div class="content-card">
+    <div class="intro-text"><p><strong>Revit Installation Failed</strong> hatası, genellikle Revit'in devasa kütüphanelerinin (Material Library) indirilmesi veya Visual C++ bileşenlerinin kurulması sırasında yaşanan kesintilerden kaynaklanır.</p>
+<p>Revit kurulum log dosyalarını (<code>%temp%</code> klasöründeki <em>Autodesk_Revit_202X_Setup.log</em>) incelediğinizde hatanın tam kaynağını görebilirsiniz.</p></div>
+    
+    <div class="warning-box">
+      <strong>⚠️ Uyarı:</strong> Aşağıdaki adımlar sistem kayıt defterine (Registry) ve sistem dosyalarına müdahale içerir. Teknik bilginiz yoksa <strong>uzman desteği</strong> almanızı öneririz. Yanlış bir işlem Windows'un çökmesine neden olabilir.
+    </div>
+
+    <h2>🛠️ Çözüm Adımları</h2>
+    <div class="step-card">
+          <div class="step-header">
+            <span class="step-num">1</span>
+            <h3 class="step-title">Material Library Kurulumunu Atlayın</h3>
+          </div>
+          <div class="step-body"><p>Revit kurulumu genellikle Autodesk Material Library indirilirken takılır veya hata verir.</p><ul><li>Kurulum ekranında 'Custom' (Özelleştir) seçeneğine tıklayın.</li><li>'Material Library' seçeneğindeki tiki kaldırın.</li><li>Revit'i bu şekilde kurun. Material Library'yi daha sonra Autodesk hesabınızdan manuel olarak indirip kurabilirsiniz.</li></ul></div>
+        </div>
+<div class="step-card">
+          <div class="step-header">
+            <span class="step-num">2</span>
+            <h3 class="step-title">Windows Defender ve Antivirüsü Kapatın</h3>
+          </div>
+          <div class="step-body"><p>Revit'in kurulum dosyaları çok sayıda küçük <code>.dll</code> dosyası içerir. Antivirüs programları bu dosyaları tararken kurulumun zaman aşımına uğramasına neden olabilir.</p><ul><li>Kurulum süresince Windows Defender Gerçek Zamanlı Koruma'yı geçici olarak kapatın.</li><li>Kurulum bittikten sonra tekrar açmayı unutmayın.</li></ul></div>
+        </div>
+<div class="step-card">
+          <div class="step-header">
+            <span class="step-num">3</span>
+            <h3 class="step-title">VCRUNTIME140.dll Hatasını Giderin</h3>
+          </div>
+          <div class="step-body"><p>Eğer kurulum loglarında VCRUNTIME hatası görüyorsanız:</p><ul><li>Microsoft'un sitesinden en güncel <strong>Visual C++ Redistributable 2015-2022</strong> paketlerini (hem x86 hem x64) indirip kurun.</li><li>Bilgisayarı yeniden başlatın ve Revit kurulumunu yönetici olarak tekrar başlatın.</li></ul></div>
+        </div>
+  </div>
+
+  <div class="cta-banner">
+    <h3>Uğraşmak İstemiyor Musunuz?</h3>
+    <p>Hemen arayın veya WhatsApp'tan yazın, AnyDesk ile bilgisayarınıza bağlanıp <strong>Revit hatasını</strong> garantili şekilde çözelim.</p>
+    <div class="hero-btns">
+      <a href="tel:05385050002" class="btn-primary">📞 0538 505 00 02</a>
+      <a href="https://wa.me/905385050002?text=Revit%20Installation%20Failed%20Çözümü%20için%20destek%20istiyorum" class="btn-wa">💬 WhatsApp Destek</a>
+    </div>
+  </div>
+
+  <div class="content-card">
+    <h2>❓ Sık Sorulan Sorular</h2>
+    <div class="faq-item">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>Revit kurulumu neden %97'de takılıyor?</span><span class="faq-arrow">▼</span>
+          </div>
+          <div class="faq-a">Bu aşama genellikle Material Library veya lisanslama servisinin kurulduğu aşamadır. İnternet bağlantısı kesintileri veya antivirüs engellemeleri bu takılmaya neden olur.</div>
+        </div>
+<div class="faq-item">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>Revit log dosyalarını nerede bulabilirim?</span><span class="faq-arrow">▼</span>
+          </div>
+          <div class="faq-a">Klavyeden Windows+R tuşlarına basıp %temp% yazın. Açılan klasörde 'Autodesk_Revit' ile başlayan .log dosyalarını Not Defteri ile açıp 'Error' kelimesini aratın.</div>
+        </div>
+<div class="faq-item">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>Uzaktan destek ile Revit kurulumu yapıyor musunuz?</span><span class="faq-arrow">▼</span>
+          </div>
+          <div class="faq-a">Evet. Revit kurulum hatalarını çözüyor ve kurulumu eksiksiz olarak (kütüphaneler dahil) tamamlıyoruz.</div>
+        </div>
+  </div>
+
+  <div class="content-card">
+    <h2>🔗 İlgili İçerikler</h2>
+    <div class="related-links">
+      <a href="/hizmetler/revit-kurulum-hizmeti.html" class="rel-link">Revit Kurulum Hizmeti</a>
+<a href="/makaleler/sistem-performans-sihirbazi.html" class="rel-link">Sistem Performans Sihirbazı</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 ProgramKur.com.tr — Teknik Hata Çözüm Merkezi</p>
+  <p style="margin-top:8px;"><a href="https://www.programkur.com.tr/">Ana Sayfa</a> | <a href="https://www.programkur.com.tr/hizmetler/">Kurulum Hizmetleri</a></p>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));
+</script>
+</body>
+</html>
