@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     q: "Kurulum sonrası destek var mı?",
-    a: "Evet, her kurulumdan sonra 7 gün boyunca oluşabilecek sorunlar için ücretsiz teknik destek sağlıyoruz.",
+    a: "Evet, her kurulumdan sonra 30 gün boyunca oluşabilecek sorunlar için ücretsiz teknik destek sağlıyoruz.",
   },
 ]
 
