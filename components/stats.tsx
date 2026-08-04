@@ -11,7 +11,7 @@ type Stat = {
 const stats: Stat[] = [
   { value: 10, suffix: "+", label: "Desteklenen Yazılım" },
   { value: 12, suffix: "+ Yıl", label: "Tecrübe" },
-  { text: "Dünya Geneli", label: "Hizmet Ağı" },
+{ value: 98, suffix: "%", label: "Müşteri Memnuniyeti" },
   { value: 200, suffix: "+", label: "Başarılı Kurulum" },
 ]
 
