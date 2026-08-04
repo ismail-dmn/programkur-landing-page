@@ -75,6 +75,24 @@ body {
   animation-play-state: paused;
 }
 
+/* Blinking button animation */
+@keyframes blink {
+  0%, 100% { 
+    opacity: 1; 
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
+  }
+  50% { 
+    opacity: 0.9; 
+    transform: scale(1.05);
+    box-shadow: 0 0 20px 5px rgba(37, 99, 235, 0.2);
+  }
+}
+
+.animate-blink {
+  animation: blink 2s ease-in-out infinite;
+}
+
 /* Subtle grid background */
 .bg-grid {
   background-image: linear-gradient(to right, rgba(7, 21, 47, 0.04) 1px, transparent 1px),
