@@ -1,26 +1,31 @@
-import { MessageSquareText, PlugZap, CheckCircle2, Wallet } from "lucide-react"
+import { MessageSquareText, PlugZap, DownloadCloud, CheckCircle2, Wallet } from "lucide-react"
 import { SectionHeading } from "@/components/section-heading"
 import { Reveal } from "@/components/reveal"
 
 const steps = [
   {
     icon: MessageSquareText,
-    title: "WhatsApp üzerinden yazın",
+    title: "WhatsApp",
     description: "İhtiyacınız olan yazılımı ve durumu kısaca iletin. Ortalama 15 dakikada dönüş yapıyoruz.",
   },
   {
     icon: PlugZap,
-    title: "Uzaktan bağlantı kuruyoruz",
-    description: "Güvenli uzaktan erişim aracıyla bilgisayarınıza bağlanıp kuruluma başlıyoruz.",
+    title: "Güvenli Bağlantı",
+    description: "Şifreli uzaktan erişim aracıyla bilgisayarınıza güvenle bağlanıyoruz.",
+  },
+  {
+    icon: DownloadCloud,
+    title: "Kurulum",
+    description: "Yazılımı kurar, lisans ve aktivasyon işlemlerini eksiksiz tamamlarız.",
   },
   {
     icon: CheckCircle2,
-    title: "Kurulum ve test tamamlanıyor",
-    description: "Yazılım kurulur, aktivasyon yapılır ve sorunsuz çalıştığı sizinle birlikte test edilir.",
+    title: "Test",
+    description: "Programın sorunsuz çalıştığını sizinle birlikte test eder, kontrol ederiz.",
   },
   {
     icon: Wallet,
-    title: "Sorun çözüldükten sonra ödeme",
+    title: "Ödeme",
     description: "Yalnızca işlem başarıyla tamamlandıktan sonra ödeme alıyoruz. Risk tamamen bizde.",
   },
 ]
@@ -31,11 +36,11 @@ export function HowItWorks() {
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           eyebrow="Nasıl Çalışır?"
-          title="Dört basit adımda çözüm"
-          description="Karmaşık süreçler yok. Yazın, bağlanalım, çözelim ve öyle ödeyin."
+          title="Beş basit adımda çözüm"
+          description="Karmaşık süreçler yok. Yazın, bağlanalım, kuralım, test edelim ve en sonda ödeyin."
         />
 
-        <ol className="relative mt-16 grid gap-10 md:grid-cols-4 md:gap-6">
+        <ol className="relative mt-16 grid gap-10 md:grid-cols-5 md:gap-6">
           {/* connector line */}
           <div
             className="absolute left-0 right-0 top-7 hidden h-px bg-gradient-to-r from-primary/0 via-primary/40 to-primary/0 md:block"

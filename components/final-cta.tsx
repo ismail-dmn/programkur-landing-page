@@ -1,6 +1,6 @@
-import { MessageCircle, Phone, ShieldCheck, Clock, Lock } from "lucide-react"
+import { MessageCircle, Phone, FileText, ShieldCheck, Clock, Lock } from "lucide-react"
 import { Reveal } from "@/components/reveal"
-import { whatsappLink, PHONE_DISPLAY } from "@/lib/utils"
+import { whatsappLink } from "@/lib/utils"
 
 const badges = [
   { icon: ShieldCheck, label: "Para İade Garantisi" },
@@ -25,29 +25,41 @@ export function FinalCta() {
 
           <div className="relative mx-auto max-w-2xl">
             <h2 className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl">
-              Yazılım probleminizi bugün çözelim
+              Programınızı Bugün Kuralım
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-white/70 text-pretty">
               WhatsApp&apos;tan yazın, ortalama 15 dakika içinde dönüş yapalım. Kurulumdan
               sonra ödeyin, gerisini bize bırakın.
             </p>
 
-            <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <div className="mt-7 inline-flex items-baseline gap-2 rounded-2xl border border-white/15 bg-white/5 px-6 py-3.5 backdrop-blur-sm">
+              <span className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">1000 TL</span>
+              <span className="text-sm font-medium text-white/60">tek seferlik kurulum</span>
+            </div>
+
+            <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
               <a
-                href={whatsappLink("Merhaba, yazılım problemimi çözmek için hemen destek almak istiyorum.")}
+                href={whatsappLink("Merhaba, programımı bugün kurdurmak için hemen destek almak istiyorum.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-7 py-4 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/30 transition-all hover:bg-primary-600 hover:shadow-xl sm:w-auto"
               >
                 <MessageCircle className="size-5 transition-transform group-hover:scale-110" aria-hidden="true" />
-                WhatsApp Destek Al
+                WhatsApp
               </a>
               <a
                 href="tel:+905385050002"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-7 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/10 sm:w-auto"
               >
                 <Phone className="size-5" aria-hidden="true" />
-                {PHONE_DISPLAY}
+                Telefon
+              </a>
+              <a
+                href="#fiyat"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-7 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/10 sm:w-auto"
+              >
+                <FileText className="size-5" aria-hidden="true" />
+                Teklif Al
               </a>
             </div>
 
