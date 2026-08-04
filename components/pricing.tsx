@@ -84,7 +84,7 @@ export function Pricing() {
 
             <div className="mt-6 flex items-end gap-2">
               <span className="text-2xl font-semibold text-primary">+</span>
-              <span className="text-5xl font-semibold tracking-tight text-navy">500</span>
+              <span className="text-5xl font-semibold tracking-tight text-navy">750</span>
               <span className="mb-2 text-2xl font-semibold text-muted-foreground">TL</span>
             </div>
             <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">
