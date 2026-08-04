@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CorelDRAW mı, Illustrator mı, Inkscape mi? Vektörel Tasarım Programı Karşılaştırması</title>
+    <meta name="description" content="CorelDRAW, Adobe Illustrator ve Inkscape arasındaki farklar. Matbaa, tabela ve grafik tasarımcılar için hangi program daha uygun? Kapsamlı rehber.">
+    <meta name="keywords" content="coreldraw vs illustrator, coreldraw mi illustrator mu, inkscape coreldraw fark, vektörel tasarım programı, coreldraw illustrator hangisi, tabela programı">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.programkur.com.tr/makaleler/coreldraw-illustrator-inkscape-karsilastirma.html">
+    
+    <meta property="og:title" content="CorelDRAW mı, Illustrator mı, Inkscape mi? Vektörel Tasarım Programı Karşılaştırması">
+    <meta property="og:description" content="CorelDRAW, Adobe Illustrator ve Inkscape arasındaki farklar. Matbaa, tabela ve grafik tasarımcılar için hangi program daha uygun? Kapsamlı rehber.">
+    <meta property="og:url" content="https://www.programkur.com.tr/makaleler/coreldraw-illustrator-inkscape-karsilastirma.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="tr_TR">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "CorelDRAW dosyalarını Illustrator'da açabilir miyim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet, CorelDRAW dosyaları (.CDR) Illustrator'da açılabilir; ancak bazı özel efektler ve fontlar farklı görünebilir. En güvenli aktarım yöntemi PDF veya EPS formatı kullanmaktır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "CorelDRAW plotter ile nasıl kullanılır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CorelDRAW, çoğu plotter/kesici markasıyla (Roland, Graphtec, Summa vb.) doğrudan uyumludur. Programkur.com.tr olarak CorelDRAW + plotter entegrasyonu kurulumunu yapıyoruz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "CorelDRAW 2024 eski dosyaları açar mı?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet, CorelDRAW 2024 çok eski versiyonlarda (X3, X5, X7) hazırlanmış dosyaları sorunsuz açar. Geriye dönük uyumluluk CorelDRAW'ın güçlü yanlarından biridir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "CorelDRAW kurulumunda yardım alabilir miyim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet, Programkur.com.tr olarak CorelDRAW kurulumu, lisanslanması ve plotter entegrasyonu için uzaktan destek veriyoruz. 0538 505 00 02'yi arayın."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: #f8f9fa; color: #333; line-height: 1.7; }
+        
+        .top-bar { background: #1a1a2e; color: #fff; text-align: center; padding: 8px; font-size: 0.85rem; }
+        .top-bar a { color: #a5b4fc; text-decoration: none; font-weight: 600; }
+        
+        .header { background: #fff; padding: 14px 20px; border-bottom: 1px solid #eee; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+        .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+        .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #1a1a2e; font-weight: 800; font-size: 1.2rem; }
+        .logo img { height: 36px; }
+        .header-cta { background: #6f66ee; color: #fff; text-decoration: none; padding: 8px 18px; border-radius: 6px; font-weight: 600; font-size: 0.9rem; }
+        
+        .hero { background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%); color: #fff; padding: 50px 20px; text-align: center; }
+        .hero .category-tag { background: rgba(111,102,238,0.3); color: #a5b4fc; padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; display: inline-block; margin-bottom: 16px; }
+        .hero h1 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 800; margin-bottom: 16px; line-height: 1.3; }
+        .hero p { color: #cbd5e1; font-size: 1.05rem; max-width: 750px; margin: 0 auto; }
+        
+        .breadcrumb { background: #fff; padding: 10px 20px; border-bottom: 1px solid #eee; font-size: 0.82rem; color: #888; }
+        .breadcrumb a { color: #6f66ee; text-decoration: none; }
+        
+        .article-layout { max-width: 1100px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 300px; gap: 30px; }
+        
+        .article-body { background: #fff; border-radius: 12px; padding: 40px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+        .article-body h2 { font-size: 1.4rem; color: #1a1a2e; margin: 32px 0 14px; border-left: 4px solid #6f66ee; padding-left: 14px; }
+        .article-body h3 { font-size: 1.15rem; color: #333; margin: 24px 0 10px; }
+        .article-body p { margin-bottom: 16px; color: #444; font-size: 1rem; }
+        .article-body ul, .article-body ol { margin: 0 0 16px 22px; color: #444; }
+        .article-body li { margin-bottom: 8px; }
+        
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9rem; }
+        .comparison-table th { background: #1a1a2e; color: #fff; padding: 12px 14px; text-align: left; }
+        .comparison-table td { padding: 11px 14px; border-bottom: 1px solid #f0f0f0; }
+        .comparison-table tr:nth-child(even) td { background: #f8f9fa; }
+        .comparison-table tr:hover td { background: #f0f0ff; }
+        .check { color: #22c55e; font-weight: 700; }
+        .cross { color: #ef4444; }
+        .partial { color: #f59e0b; }
+        
+        .highlight-box { background: #f0f0ff; border-left: 4px solid #6f66ee; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 20px 0; }
+        .highlight-box strong { color: #4338ca; }
+        
+        .warning-box { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 20px 0; }
+        
+        .faq-section { margin-top: 40px; }
+        .faq-section h2 { font-size: 1.4rem; color: #1a1a2e; margin-bottom: 20px; border-left: 4px solid #6f66ee; padding-left: 14px; }
+        .faq-item { background: #f8f9fa; border: 1px solid #e5e7eb; border-radius: 8px; padding: 18px 20px; margin-bottom: 14px; }
+        .faq-item h3 { font-size: 1rem; color: #1a1a2e; margin-bottom: 8px; font-weight: 700; }
+        .faq-item h3::before { content: 'S: '; color: #6f66ee; }
+        .faq-item p { margin: 0; color: #555; font-size: 0.95rem; }
+        
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
+        .sidebar-card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+        .sidebar-card h3 { font-size: 1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 14px; border-bottom: 2px solid #f0f0f0; padding-bottom: 8px; }
+        .sidebar-card a { display: block; color: #6f66ee; text-decoration: none; font-size: 0.88rem; padding: 5px 0; border-bottom: 1px solid #f5f5f5; }
+        .sidebar-card a:hover { color: #4338ca; }
+        .sidebar-cta { background: linear-gradient(135deg, #6f66ee, #5a52d5); color: #fff; text-align: center; }
+        .sidebar-cta h3 { color: #fff; border-color: rgba(255,255,255,0.2); }
+        .sidebar-cta p { color: #e0e7ff; font-size: 0.88rem; margin-bottom: 14px; }
+        .sidebar-cta a { background: #fff; color: #6f66ee; padding: 10px 16px; border-radius: 6px; font-weight: 700; display: block; text-align: center; border: none; }
+        .sidebar-cta a:hover { background: #f0f0ff; }
+        .sidebar-cta .wa-btn { background: #25D366; color: #fff; margin-top: 8px; }
+        
+        .footer { background: #1a1a2e; color: #94a3b8; text-align: center; padding: 24px; font-size: 0.85rem; margin-top: 60px; }
+        .footer a { color: #a5b4fc; text-decoration: none; }
+        
+        @media (max-width: 900px) {
+            .article-layout { grid-template-columns: 1fr; }
+            .sidebar { display: none; }
+        }
+        @media (max-width: 600px) {
+            .article-body { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">📞 Uzman desteği: <a href="tel:05385050002">0538 505 00 02</a> | <a href="https://wa.me/905385050002">WhatsApp</a></div>
+
+<header class="header">
+    <div class="header-inner">
+        <a href="/" class="logo">
+            <img src="../images/programkur.com.tr.png" alt="Programkur.com.tr" fetchpriority="high">
+            Programkur.com.tr
+        </a>
+        <a href="tel:05385050002" class="header-cta">📞 Hemen Ara</a>
+    </div>
+</header>
+
+<nav class="breadcrumb">
+    <a href="/">Ana Sayfa</a> › <a href="/makaleler/">Makaleler</a> › <span>CorelDRAW mı, Illustrator mı, Inkscape mi? Doğru Vektörel Tasarım Programını Seçin</span>
+</nav>
+
+<section class="hero">
+    <span class="category-tag">📖 Rehber Makale</span>
+    <h1>CorelDRAW mı, Illustrator mı, Inkscape mi? Doğru Vektörel Tasarım Programını Seçin</h1>
+    <p>CorelDRAW, Adobe Illustrator ve Inkscape arasındaki farklar. Matbaa, tabela ve grafik tasarımcılar için hangi program daha uygun? Kapsamlı rehber.</p>
+</section>
+
+<div class="article-layout">
+    <article class="article-body">
+        
+        <p>Vektörel grafik tasarımında üç büyük isim öne çıkıyor: <strong>CorelDRAW</strong>, <strong>Adobe Illustrator</strong> ve açık kaynaklı <strong>Inkscape</strong>. Türkiye'de özellikle matbaa, tabela ve tekstil sektöründe CorelDRAW hakimken, dünya genelinde Illustrator daha yaygındır.</p>
+        
+        <h2>Hızlı Karşılaştırma Tablosu</h2>
+        <table class="comparison-table">
+            <thead><tr><th>Özellik</th><th>CorelDRAW</th><th>Illustrator</th><th>Inkscape</th></tr></thead>
+            <tbody>
+                <tr><td>Fiyat</td><td>Tek seferlik lisans mevcut</td><td>Aylık abonelik (pahalı)</td><td>Tamamen ücretsiz</td></tr>
+                <tr><td>Türkiye'de Yaygınlık</td><td><span class="check">Çok yaygın</span></td><td>Orta</td><td>Az</td></tr>
+                <tr><td>Plotter/Kesici Uyumu</td><td><span class="check">Mükemmel</span></td><td><span class="partial">Orta</span></td><td><span class="partial">Kısmi</span></td></tr>
+                <tr><td>Baskı/Matbaa</td><td><span class="check">Çok iyi</span></td><td><span class="check">Mükemmel</span></td><td><span class="partial">Orta</span></td></tr>
+                <tr><td>Öğrenme Kolaylığı</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐</td><td>⭐⭐⭐</td></tr>
+                <tr><td>Sistem Gereksinimi</td><td>Düşük-Orta</td><td>Orta</td><td>Çok Düşük</td></tr>
+                <tr><td>Dosya Formatı</td><td>.CDR</td><td>.AI</td><td>.SVG</td></tr>
+                <tr><td>AI/SVG Uyumu</td><td><span class="check">İyi</span></td><td><span class="check">Mükemmel</span></td><td><span class="check">SVG Odaklı</span></td></tr>
+            </tbody>
+        </table>
+        
+        <h2>Türkiye'de Neden CorelDRAW Bu Kadar Yaygın?</h2>
+        <p>Türkiye'deki tabela, reklam, tekstil ve matbaa sektörü tarihsel olarak CorelDRAW etrafında şekillenmiştir. Folyo kesici (plotter) ve lazer kesim makinelerinin büyük çoğunluğu CorelDRAW ile sorunsuz çalışacak şekilde yapılandırılmıştır. Bu nedenle sektörde çalışıyorsanız CorelDRAW öğrenmek neredeyse zorunludur.</p>
+        
+        <h2>Adobe Illustrator Ne Zaman Tercih Edilmeli?</h2>
+        <p>Uluslararası ajanslar, büyük markalar ve dijital tasarım odaklı işler için Illustrator tercih edilir. Adobe Creative Cloud ekosistemiyle (Photoshop, InDesign, Premiere) kusursuz entegrasyon sunar. Ancak aylık abonelik maliyeti yüksektir.</p>
+        
+        <h2>Inkscape: Ücretsiz Ama Sınırlı</h2>
+        <p>Inkscape, bütçesi kısıtlı kullanıcılar veya SVG tabanlı web grafikleri için iyi bir seçenektir. Ancak profesyonel matbaa ve tabela işleri için yetersiz kalabilir.</p>
+        
+        <div class="highlight-box">
+            <strong>Tavsiyemiz:</strong> Tabela, matbaa, tekstil → <strong>CorelDRAW</strong>. Uluslararası ajans, dijital tasarım → <strong>Illustrator</strong>. Bütçe yok, SVG işleri → <strong>Inkscape</strong>.
+        </div>
+    
+        
+        <div class="faq-section">
+            <h2>Sıkça Sorulan Sorular</h2>
+            
+        <div class="faq-item">
+            <h3>CorelDRAW dosyalarını Illustrator'da açabilir miyim?</h3>
+            <p>Evet, CorelDRAW dosyaları (.CDR) Illustrator'da açılabilir; ancak bazı özel efektler ve fontlar farklı görünebilir. En güvenli aktarım yöntemi PDF veya EPS formatı kullanmaktır.</p>
+        </div>
+        <div class="faq-item">
+            <h3>CorelDRAW plotter ile nasıl kullanılır?</h3>
+            <p>CorelDRAW, çoğu plotter/kesici markasıyla (Roland, Graphtec, Summa vb.) doğrudan uyumludur. Programkur.com.tr olarak CorelDRAW + plotter entegrasyonu kurulumunu yapıyoruz.</p>
+        </div>
+        <div class="faq-item">
+            <h3>CorelDRAW 2024 eski dosyaları açar mı?</h3>
+            <p>Evet, CorelDRAW 2024 çok eski versiyonlarda (X3, X5, X7) hazırlanmış dosyaları sorunsuz açar. Geriye dönük uyumluluk CorelDRAW'ın güçlü yanlarından biridir.</p>
+        </div>
+        <div class="faq-item">
+            <h3>CorelDRAW kurulumunda yardım alabilir miyim?</h3>
+            <p>Evet, Programkur.com.tr olarak CorelDRAW kurulumu, lisanslanması ve plotter entegrasyonu için uzaktan destek veriyoruz. 0538 505 00 02'yi arayın.</p>
+        </div>
+        </div>
+    </article>
+    
+    <aside class="sidebar">
+        <div class="sidebar-card sidebar-cta">
+            <h3>Uzman Desteği Alın</h3>
+            <p>Hangi programın size uygun olduğundan emin değil misiniz? Uzmanlarımız yardımcı olsun.</p>
+            <a href="tel:05385050002">📞 0538 505 00 02</a>
+            <a href="https://wa.me/905385050002" class="wa-btn">💬 WhatsApp</a>
+        </div>
+        <div class="sidebar-card">
+            <h3>İlgili Makaleler</h3>
+            <a href="/blog/autocad-kurulumu.html">AutoCAD Kurulumu</a>
+            <a href="/blog/revit-kurulumu.html">Revit Kurulumu</a>
+            <a href="/blog/lumion-kurulumu.html">Lumion Kurulumu</a>
+            <a href="/blog/solidworks-kurulumu.html">SolidWorks Kurulumu</a>
+            <a href="/blog/sketchup-vray-kurulumu.html">SketchUp + V-Ray</a>
+            <a href="/blog/coreldraw-kurulumu.html">CorelDRAW Kurulumu</a>
+            <a href="/makaleler/sistem-performans-sihirbazi.html">Sistem Sihirbazı</a>
+        </div>
+        <div class="sidebar-card">
+            <h3>Hızlı Linkler</h3>
+            <a href="/programindir.html">Uzak Masaüstü İndir</a>
+            <a href="/blog/ebys-kurulumu.html">EBYS Kurulumu</a>
+            <a href="/blog/barkod-yazici-kurulumu.html">Barkod Yazıcı</a>
+        </div>
+    </aside>
+</div>
+
+<footer class="footer">
+    <p>© 2025 <a href="/">Programkur.com.tr</a> — Tüm Türkiye'ye Uzaktan Destek | <a href="tel:05385050002">0538 505 00 02</a></p>
+</footer>
+
+</body>
+</html>

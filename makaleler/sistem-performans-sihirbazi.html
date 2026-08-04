@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sistem Performans Sihirbazı | AutoCAD, Revit, Lumion Uyumluluk Testi | Programkur.com.tr</title>
+<meta name="description" content="Bilgisayarınızın AutoCAD, Revit, Lumion, SolidWorks ve CorelDRAW için ne kadar uygun olduğunu öğrenin. CPU, GPU, RAM ve disk seçerek anlık performans skoru alın."/>
+<meta name="keywords" content="autocad sistem gereksinimleri, revit bilgisayar gereksinimleri, lumion sistem gereksinimleri, autocad hangi bilgisayar, solidworks sistem gereksinimleri, program performans testi"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://www.programkur.com.tr/makaleler/sistem-performans-sihirbazi.html"/>
+<meta property="og:title" content="Sistem Performans Sihirbazı – AutoCAD, Revit, Lumion Uyumluluk Testi"/>
+<meta property="og:description" content="CPU, GPU, RAM ve disk seçerek sisteminizin AutoCAD, Revit ve Lumion için ne kadar uygun olduğunu anlık öğrenin."/>
+<meta property="og:url" content="https://www.programkur.com.tr/makaleler/sistem-performans-sihirbazi.html"/>
+<meta property="og:type" content="website"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --primary: #6f66ee;
+    --primary-dark: #5a52d5;
+    --success: #22c55e;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --dark: #1a1a2e;
+    --card-bg: #fff;
+    --bg: #f0f2f8;
+    --text: #333;
+    --muted: #888;
+    --border: #e5e7eb;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); }
+
+  /* HEADER */
+  .wizard-header {
+    background: linear-gradient(135deg, var(--dark) 0%, #0f3460 100%);
+    color: #fff; padding: 40px 20px; text-align: center;
+  }
+  .wizard-header h1 { font-size: clamp(1.4rem, 4vw, 2.2rem); font-weight: 900; margin-bottom: 10px; }
+  .wizard-header p { color: #a5b4fc; font-size: 1rem; max-width: 600px; margin: 0 auto; }
+  .back-link { display: inline-flex; align-items: center; gap: 6px; color: #a5b4fc; text-decoration: none; font-size: 0.9rem; margin-bottom: 16px; }
+  .back-link:hover { color: #fff; }
+
+  /* LAYOUT */
+  .wizard-container { max-width: 1200px; margin: 0 auto; padding: 30px 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  @media (max-width: 900px) { .wizard-container { grid-template-columns: 1fr; } }
+
+  /* CARDS */
+  .card { background: var(--card-bg); border-radius: 16px; padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); border: 1px solid var(--border); }
+  .card-title { font-size: 1.1rem; font-weight: 800; color: var(--dark); margin-bottom: 18px; display: flex; align-items: center; gap: 8px; }
+
+  /* FORM ELEMENTS */
+  .form-group { margin-bottom: 16px; }
+  .form-group label { display: block; font-weight: 700; font-size: 0.88rem; color: #555; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .form-group select { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 8px; font-size: 0.95rem; background: #fff; color: var(--text); transition: border-color 0.2s; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='2' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; }
+  .form-group select:focus { outline: none; border-color: var(--primary); }
+  .form-group select optgroup { font-weight: 700; color: var(--dark); }
+
+  /* RADIO GROUPS */
+  .radio-group { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .radio-option { position: relative; }
+  .radio-option input { position: absolute; opacity: 0; width: 0; height: 0; }
+  .radio-option label { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border: 2px solid var(--border); border-radius: 8px; cursor: pointer; font-size: 0.88rem; font-weight: 600; transition: all 0.15s; }
+  .radio-option input:checked + label { border-color: var(--primary); background: #f0eeff; color: var(--primary); }
+  .radio-option label:hover { border-color: var(--primary); }
+
+  /* ANALYZE BUTTON */
+  .btn-analyze { width: 100%; padding: 16px; background: var(--primary); color: #fff; border: none; border-radius: 10px; font-size: 1.1rem; font-weight: 800; cursor: pointer; transition: all 0.2s; margin-top: 8px; }
+  .btn-analyze:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(111,102,238,0.35); }
+
+  /* RESULTS */
+  .results-panel { grid-column: 1 / -1; }
+  .results-hidden { display: none; }
+
+  /* SCORE CARDS */
+  .score-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; margin-bottom: 24px; }
+  .score-card { background: #fff; border-radius: 12px; padding: 18px; text-align: center; border: 2px solid var(--border); transition: all 0.2s; }
+  .score-card.excellent { border-color: var(--success); background: #f0fdf4; }
+  .score-card.good { border-color: #86efac; background: #f7fef9; }
+  .score-card.medium { border-color: var(--warning); background: #fffbeb; }
+  .score-card.poor { border-color: var(--danger); background: #fef2f2; }
+  .score-card .program-icon { font-size: 2rem; margin-bottom: 6px; }
+  .score-card .program-name { font-size: 0.82rem; font-weight: 700; color: #555; margin-bottom: 8px; }
+  .score-card .score-value { font-size: 2rem; font-weight: 900; }
+  .score-card.excellent .score-value { color: var(--success); }
+  .score-card.good .score-value { color: #16a34a; }
+  .score-card.medium .score-value { color: var(--warning); }
+  .score-card.poor .score-value { color: var(--danger); }
+  .score-card .score-label { font-size: 0.75rem; font-weight: 700; margin-top: 4px; }
+  .score-card.excellent .score-label { color: var(--success); }
+  .score-card.good .score-label { color: #16a34a; }
+  .score-card.medium .score-label { color: var(--warning); }
+  .score-card.poor .score-label { color: var(--danger); }
+
+  /* CHART */
+  .chart-container { position: relative; height: 320px; margin-bottom: 24px; }
+
+  /* SPEC TABLE */
+  .spec-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin-bottom: 24px; }
+  .spec-table th { background: var(--dark); color: #fff; padding: 10px 14px; text-align: left; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px; }
+  .spec-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  .spec-table tr:hover td { background: #f8f9fa; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; }
+  .badge-green { background: #dcfce7; color: #166534; }
+  .badge-yellow { background: #fef9c3; color: #854d0e; }
+  .badge-red { background: #fee2e2; color: #991b1b; }
+  .badge-blue { background: #dbeafe; color: #1e40af; }
+  .badge-purple { background: #ede9fe; color: #5b21b6; }
+
+  /* BOTTLENECK */
+  .bottleneck-box { border-radius: 12px; padding: 18px; margin-bottom: 20px; border: 2px solid; }
+  .bottleneck-box.warning { border-color: var(--warning); background: #fffbeb; }
+  .bottleneck-box.danger { border-color: var(--danger); background: #fef2f2; }
+  .bottleneck-box.success { border-color: var(--success); background: #f0fdf4; }
+  .bottleneck-title { font-weight: 800; font-size: 1rem; margin-bottom: 8px; }
+
+  /* RECOMMENDATIONS */
+  .rec-list { list-style: none; }
+  .rec-list li { display: flex; align-items: flex-start; gap: 10px; padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 0.92rem; }
+  .rec-list li:last-child { border-bottom: none; }
+  .rec-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 1px; }
+
+  /* AUTOCAD VERSION TABLE */
+  .version-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .version-table th { background: #f1f5f9; padding: 8px 12px; text-align: center; font-weight: 700; color: #555; border: 1px solid var(--border); }
+  .version-table td { padding: 8px 12px; text-align: center; border: 1px solid var(--border); }
+  .compat-full { background: #dcfce7; color: #166534; font-weight: 700; }
+  .compat-ok { background: #fef9c3; color: #854d0e; font-weight: 700; }
+  .compat-poor { background: #fee2e2; color: #991b1b; font-weight: 700; }
+
+  /* CTA */
+  .cta-box { background: linear-gradient(135deg, var(--dark), #0f3460); border-radius: 16px; padding: 28px; text-align: center; margin-top: 24px; color: #fff; }
+  .cta-box h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 8px; }
+  .cta-box p { color: #a5b4fc; margin-bottom: 20px; font-size: 0.95rem; }
+  .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .cta-btn { padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 800; font-size: 0.95rem; }
+  .cta-btn-primary { background: var(--primary); color: #fff; }
+  .cta-btn-green { background: var(--success); color: #fff; }
+
+  /* DETAIL CHIPS */
+  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .chip { display: inline-flex; align-items: center; gap: 5px; padding: 5px 12px; border-radius: 20px; font-size: 0.78rem; font-weight: 700; background: #f1f5f9; color: #555; border: 1px solid var(--border); }
+  .chip.yes { background: #dcfce7; color: #166534; border-color: #86efac; }
+  .chip.no { background: #fee2e2; color: #991b1b; border-color: #fca5a5; }
+  .chip.info { background: #dbeafe; color: #1e40af; border-color: #93c5fd; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="wizard-header">
+  <a href="https://www.programkur.com.tr/" class="back-link">← Programkur.com.tr'ye Dön</a>
+  <h1>🔮 Sistem Performans Sihirbazı</h1>
+  <p>İşlemcinizi, ekran kartınızı, RAM ve diskinizi seçin — AutoCAD, Revit, Lumion ve daha fazlası için anlık uyumluluk skoru alın.</p>
+</div>
+
+<div class="wizard-container">
+
+  <!-- SOL PANEL: SEÇİMLER -->
+  <div>
+    <div class="card">
+      <div class="card-title">⚙️ Sistem Bileşenlerini Seçin</div>
+
+      <!-- CPU -->
+      <div class="form-group">
+        <label>🖥️ İşlemci (CPU)</label>
+        <select id="sel-cpu">
+          <option value="">-- İşlemci Seçin --</option>
+          <optgroup label="🔴 Eski Sistemler">
+            <option value="i5_6500">Intel Core i5-6500 (6. Nesil, 2015)</option>
+            <option value="i7_6700">Intel Core i7-6700 (6. Nesil, 2015)</option>
+            <option value="i7_7700">Intel Core i7-7700 (7. Nesil, 2017)</option>
+            <option value="ryzen5_2400g">AMD Ryzen 5 2400G (Zen+, 2018)</option>
+            <option value="ryzen5_2600">AMD Ryzen 5 2600 (Zen+, 2018)</option>
+          </optgroup>
+          <optgroup label="🟡 Kurumsal Ofis (8.-9. Nesil)">
+            <option value="i5_8500">Intel Core i5-8500 (8. Nesil, 2018)</option>
+            <option value="i7_8700">Intel Core i7-8700 (8. Nesil, 2017)</option>
+            <option value="i5_9500">Intel Core i5-9500 (9. Nesil, 2018)</option>
+            <option value="i7_9700">Intel Core i7-9700 (9. Nesil, 2018)</option>
+          </optgroup>
+          <optgroup label="🟢 Orta Seviye CAD (Zen 2-3)">
+            <option value="ryzen5_3600">AMD Ryzen 5 3600 (Zen 2, 2019)</option>
+            <option value="ryzen7_3700x">AMD Ryzen 7 3700X (Zen 2, 2019)</option>
+            <option value="ryzen5_5600">AMD Ryzen 5 5600 (Zen 3, 2021)</option>
+            <option value="ryzen7_5800x">AMD Ryzen 7 5800X (Zen 3, 2020)</option>
+          </optgroup>
+          <optgroup label="🔵 Güncel Performans Sistemleri">
+            <option value="i5_12400">Intel Core i5-12400 (12. Nesil, 2021)</option>
+            <option value="i7_12700">Intel Core i7-12700 (12. Nesil, 2021)</option>
+            <option value="i5_13400">Intel Core i5-13400 (13. Nesil, 2023)</option>
+            <option value="i7_14700">Intel Core i7-14700 (14. Nesil, 2023)</option>
+            <option value="ryzen7_7700">AMD Ryzen 7 7700 (Zen 4, 2022)</option>
+            <option value="ryzen9_7900x">AMD Ryzen 9 7900X (Zen 4, 2022)</option>
+          </optgroup>
+          <optgroup label="🟣 Mobil Workstation">
+            <option value="ryzen7_8845hs">AMD Ryzen 7 8845HS (Zen 4, 2024)</option>
+            <option value="ultra7_155h">Intel Core Ultra 7 155H (Meteor Lake, 2023)</option>
+          </optgroup>
+          <optgroup label="⚡ AI/NPU Destekli">
+            <option value="ryzen_ai9_hx370">AMD Ryzen AI 9 HX 370 (Zen 5, 2024)</option>
+          </optgroup>
+          <optgroup label="🏭 Workstation">
+            <option value="xeon_e5_2680v4">Intel Xeon E5-2680 v4 (2016)</option>
+            <option value="xeon_w2245">Intel Xeon W-2245 (2019)</option>
+            <option value="threadripper_3960x">AMD Threadripper 3960X (2019)</option>
+            <option value="threadripper_pro_5975wx">AMD Threadripper PRO 5975WX (2022)</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <!-- GPU -->
+      <div class="form-group">
+        <label>🎮 Ekran Kartı (GPU)</label>
+        <select id="sel-gpu">
+          <option value="">-- Ekran Kartı Seçin --</option>
+          <optgroup label="🔴 Eski Ofis/CAD">
+            <option value="quadro_k620">NVIDIA Quadro K620 (2 GB, 2014)</option>
+            <option value="quadro_p620">NVIDIA Quadro P620 (2 GB, 2017)</option>
+            <option value="gtx_1050ti">NVIDIA GeForce GTX 1050 Ti (4 GB, 2016)</option>
+            <option value="gtx_1650">NVIDIA GeForce GTX 1650 (4 GB, 2019)</option>
+            <option value="rx_580">AMD Radeon RX 580 (8 GB, 2017)</option>
+          </optgroup>
+          <optgroup label="🟡 Orta Seviye CAD">
+            <option value="gtx_1660s">NVIDIA GeForce GTX 1660 Super (6 GB, 2019)</option>
+            <option value="rtx_2060">NVIDIA GeForce RTX 2060 (6 GB, 2019)</option>
+            <option value="rtx_3050">NVIDIA GeForce RTX 3050 (8 GB, 2022)</option>
+            <option value="rtx_3060">NVIDIA GeForce RTX 3060 (12 GB, 2021)</option>
+            <option value="rx_6600">AMD Radeon RX 6600 (8 GB, 2021)</option>
+            <option value="rx_6700xt">AMD Radeon RX 6700 XT (12 GB, 2021)</option>
+          </optgroup>
+          <optgroup label="🟢 Profesyonel CAD/Render">
+            <option value="rtx_4060">NVIDIA GeForce RTX 4060 (8 GB, 2023)</option>
+            <option value="rtx_4070">NVIDIA GeForce RTX 4070 (12 GB, 2023)</option>
+            <option value="rtx_4080">NVIDIA GeForce RTX 4080 (16 GB, 2022)</option>
+            <option value="rx_7800xt">AMD Radeon RX 7800 XT (16 GB, 2023)</option>
+          </optgroup>
+          <optgroup label="🏭 Profesyonel Workstation">
+            <option value="rtx_a2000">NVIDIA RTX A2000 (12 GB, 2021)</option>
+            <option value="rtx_a4000">NVIDIA RTX A4000 (16 GB, 2021)</option>
+            <option value="radeon_pro_w6600">AMD Radeon PRO W6600 (8 GB, 2021)</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <!-- RAM -->
+      <div class="form-group">
+        <label>💾 RAM Miktarı</label>
+        <div class="radio-group">
+          <div class="radio-option"><input type="radio" name="ram" id="ram8" value="8"/><label for="ram8">⚠️ 8 GB <small>(Minimum)</small></label></div>
+          <div class="radio-option"><input type="radio" name="ram" id="ram16" value="16" checked/><label for="ram16">✅ 16 GB <small>(Önerilen)</small></label></div>
+          <div class="radio-option"><input type="radio" name="ram" id="ram32" value="32"/><label for="ram32">🏆 32 GB <small>(Profesyonel)</small></label></div>
+          <div class="radio-option"><input type="radio" name="ram" id="ram64" value="64"/><label for="ram64">⚡ 64 GB+ <small>(Workstation)</small></label></div>
+        </div>
+      </div>
+
+      <!-- DISK -->
+      <div class="form-group">
+        <label>💿 Depolama Türü</label>
+        <div class="radio-group">
+          <div class="radio-option"><input type="radio" name="disk" id="diskHDD" value="hdd"/><label for="diskHDD">🔴 HDD <small>(Yavaş)</small></label></div>
+          <div class="radio-option"><input type="radio" name="disk" id="diskSATA" value="sata"/><label for="diskSATA">🟡 SATA SSD <small>(Orta)</small></label></div>
+          <div class="radio-option"><input type="radio" name="disk" id="diskNVMe" value="nvme" checked/><label for="diskNVMe">🟢 NVMe SSD <small>(Önerilen)</small></label></div>
+          <div class="radio-option"><input type="radio" name="disk" id="diskNVMeH" value="nvme_high"/><label for="diskNVMeH">⚡ NVMe Gen4+ <small>(En Hızlı)</small></label></div>
+        </div>
+      </div>
+
+      <button class="btn-analyze" onclick="analyze()">🔍 Performans Analizi Yap</button>
+    </div>
+  </div>
+
+  <!-- SAĞ PANEL: HIZLI BİLGİ -->
+  <div>
+    <div class="card" id="info-panel">
+      <div class="card-title">ℹ️ Program Gereksinimleri Hakkında</div>
+      <p style="color:#666; font-size:0.92rem; line-height:1.7; margin-bottom:16px;">
+        Sol taraftan sistem bileşenlerinizi seçerek anlık uyumluluk skoru alabilirsiniz.
+      </p>
+      <div style="background:#f8f9fa; border-radius:10px; padding:16px; font-size:0.88rem; line-height:1.8;">
+        <div style="font-weight:800; color:var(--dark); margin-bottom:10px;">📌 Önemli Notlar</div>
+        <div>⚡ <strong>AutoCAD</strong> — Tek çekirdek performansı kritik</div>
+        <div>🏗️ <strong>Revit</strong> — Çekirdek sayısı + RAM önemli</div>
+        <div>🎨 <strong>Lumion/D5</strong> — GPU (VRAM + CUDA) belirleyici</div>
+        <div>📐 <strong>SolidWorks</strong> — Sertifikalı GPU önerilir</div>
+        <div>🎭 <strong>CorelDRAW</strong> — Düşük gereksinim, CPU yeterli</div>
+      </div>
+      <div style="margin-top:16px; background:#ede9fe; border-radius:10px; padding:16px; font-size:0.88rem;">
+        <div style="font-weight:800; color:#5b21b6; margin-bottom:8px;">🎯 Skor Skalası</div>
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <div style="display:flex; align-items:center; gap:8px;"><span style="background:#dcfce7;color:#166534;padding:2px 10px;border-radius:20px;font-weight:700;font-size:0.8rem;">80-100</span> Mükemmel — Tüm özellikler sorunsuz çalışır</div>
+          <div style="display:flex; align-items:center; gap:8px;"><span style="background:#fef9c3;color:#854d0e;padding:2px 10px;border-radius:20px;font-weight:700;font-size:0.8rem;">60-79</span> İyi — Temel kullanım için yeterli</div>
+          <div style="display:flex; align-items:center; gap:8px;"><span style="background:#fed7aa;color:#9a3412;padding:2px 10px;border-radius:20px;font-weight:700;font-size:0.8rem;">40-59</span> Orta — Bazı kısıtlamalar olabilir</div>
+          <div style="display:flex; align-items:center; gap:8px;"><span style="background:#fee2e2;color:#991b1b;padding:2px 10px;border-radius:20px;font-weight:700;font-size:0.8rem;">0-39</span> Yetersiz — Yükseltme önerilir</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SONUÇLAR PANELİ (başta gizli) -->
+  <div class="results-panel results-hidden" id="results-panel">
+
+    <!-- SKOR KARTLARI -->
+    <div class="card" style="margin-bottom:24px;">
+      <div class="card-title">📊 Program Uyumluluk Skorları</div>
+      <div class="score-grid" id="score-grid"></div>
+    </div>
+
+    <!-- CHART + SPEC TABLE YAN YANA -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:24px;">
+      <div class="card">
+        <div class="card-title">📈 Performans Grafiği</div>
+        <div class="chart-container"><canvas id="perfChart"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-title">🔧 Seçilen Sistem Detayları</div>
+        <div id="spec-detail"></div>
+      </div>
+    </div>
+
+    <!-- AUTOCAD VERSİYON UYUMLULUK TABLOSU -->
+    <div class="card" style="margin-bottom:24px;">
+      <div class="card-title">📐 AutoCAD Versiyon Uyumluluk Tablosu</div>
+      <div style="overflow-x:auto;">
+        <table class="version-table" id="version-table"></table>
+      </div>
+    </div>
+
+    <!-- DARBOĞAZ ANALİZİ -->
+    <div class="card" style="margin-bottom:24px;">
+      <div class="card-title">⚠️ Darboğaz Analizi</div>
+      <div id="bottleneck-analysis"></div>
+    </div>
+
+    <!-- ÖNERİLER -->
+    <div class="card" style="margin-bottom:24px;">
+      <div class="card-title">💡 Kişisel Yükseltme Önerileri</div>
+      <ul class="rec-list" id="recommendations"></ul>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-box">
+      <h3>Kurulum veya Yükseltme Desteği mi Lazım?</h3>
+      <p>Uzman ekibimiz AnyDesk veya TeamViewer ile bağlanarak programınızı kurar, sisteminizi optimize eder.</p>
+      <div class="cta-buttons">
+        <a href="tel:05385050002" class="cta-btn cta-btn-primary">📞 0538 505 00 02</a>
+        <a href="https://wa.me/905385050002" class="cta-btn cta-btn-green">💬 WhatsApp</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ============================================================
+// VERİTABANI
+// ============================================================
+const CPU_DB = [{"id": "i5_6500", "name": "Intel Core i5-6500", "brand": "Intel", "gen": 6, "cores": 4, "threads": 4, "singlecore": 1050, "passmark": 6200, "passmark_single": 2050, "year": 2015, "tdp": 65, "category": "Eski Sistem", "autocad_score": 42, "revit_score": 30, "lumion_score": 20, "notes": "AutoCAD 2022 ve öncesi için yeterli. 2024+ için yetersiz."}, {"id": "i7_6700", "name": "Intel Core i7-6700", "brand": "Intel", "gen": 6, "cores": 4, "threads": 8, "singlecore": 1100, "passmark": 7800, "passmark_single": 2150, "year": 2015, "tdp": 65, "category": "Eski Sistem", "autocad_score": 46, "revit_score": 35, "lumion_score": 22, "notes": "Hyperthreading ile Revit'te i5-6500'den daha iyi."}, {"id": "i7_7700", "name": "Intel Core i7-7700", "brand": "Intel", "gen": 7, "cores": 4, "threads": 8, "singlecore": 1150, "passmark": 8200, "passmark_single": 2250, "year": 2017, "tdp": 65, "category": "Eski Sistem", "autocad_score": 50, "revit_score": 38, "lumion_score": 24, "notes": "Kurumsal ofislerde hâlâ yaygın. AutoCAD 2024 için minimum sınırda."}, {"id": "i5_8500", "name": "Intel Core i5-8500", "brand": "Intel", "gen": 8, "cores": 6, "threads": 6, "singlecore": 1200, "passmark": 10200, "passmark_single": 2350, "year": 2018, "tdp": 65, "category": "Kurumsal Ofis", "autocad_score": 58, "revit_score": 50, "lumion_score": 30, "notes": "6 çekirdek ile Revit performansı belirgin şekilde artar."}, {"id": "i7_8700", "name": "Intel Core i7-8700", "brand": "Intel", "gen": 8, "cores": 6, "threads": 12, "singlecore": 1280, "passmark": 13500, "passmark_single": 2500, "year": 2017, "tdp": 65, "category": "Kurumsal Ofis", "autocad_score": 64, "revit_score": 58, "lumion_score": 35, "notes": "Hâlâ güçlü bir ofis CPU'su. AutoCAD 2025 için yeterli."}, {"id": "i5_9500", "name": "Intel Core i5-9500", "brand": "Intel", "gen": 9, "cores": 6, "threads": 6, "singlecore": 1250, "passmark": 10800, "passmark_single": 2420, "year": 2018, "tdp": 65, "category": "Kurumsal Ofis", "autocad_score": 60, "revit_score": 52, "lumion_score": 32, "notes": "Kurumsal ofislerde en yaygın CPU'lardan biri."}, {"id": "i7_9700", "name": "Intel Core i7-9700", "brand": "Intel", "gen": 9, "cores": 8, "threads": 8, "singlecore": 1300, "passmark": 14500, "passmark_single": 2550, "year": 2018, "tdp": 65, "category": "Kurumsal Ofis", "autocad_score": 66, "revit_score": 62, "lumion_score": 38, "notes": "8 çekirdek ile Revit render sürelerini kısaltır."}, {"id": "i5_12400", "name": "Intel Core i5-12400", "brand": "Intel", "gen": 12, "cores": 6, "threads": 12, "singlecore": 1750, "passmark": 17500, "passmark_single": 3500, "year": 2021, "tdp": 65, "category": "Güncel Performans", "autocad_score": 78, "revit_score": 70, "lumion_score": 50, "notes": "Fiyat/performans şampiyonu. AutoCAD 2025/2026 için mükemmel."}, {"id": "i7_12700", "name": "Intel Core i7-12700", "brand": "Intel", "gen": 12, "cores": 12, "threads": 20, "singlecore": 1850, "passmark": 28000, "passmark_single": 3700, "year": 2021, "tdp": 65, "category": "Güncel Performans", "autocad_score": 84, "revit_score": 82, "lumion_score": 60, "notes": "P+E çekirdek mimarisi ile hem AutoCAD hem Revit'te üstün."}, {"id": "i5_13400", "name": "Intel Core i5-13400", "brand": "Intel", "gen": 13, "cores": 10, "threads": 16, "singlecore": 1820, "passmark": 22000, "passmark_single": 3650, "year": 2023, "tdp": 65, "category": "Güncel Performans", "autocad_score": 82, "revit_score": 76, "lumion_score": 55, "notes": "13. nesil verimlilik artışı ile i7-12700'e yakın performans."}, {"id": "i7_14700", "name": "Intel Core i7-14700", "brand": "Intel", "gen": 14, "cores": 20, "threads": 28, "singlecore": 2000, "passmark": 42000, "passmark_single": 4000, "year": 2023, "tdp": 65, "category": "Güncel Performans", "autocad_score": 90, "revit_score": 92, "lumion_score": 72, "notes": "20 çekirdek ile Revit'te olağanüstü. AutoCAD 2026 tam uyumlu."}, {"id": "ultra7_155h", "name": "Intel Core Ultra 7 155H", "brand": "Intel", "gen": 14, "cores": 16, "threads": 22, "singlecore": 1950, "passmark": 32000, "passmark_single": 3900, "year": 2023, "tdp": 28, "category": "AI/NPU Destekli", "autocad_score": 88, "revit_score": 86, "lumion_score": 68, "notes": "NPU ile AI araçları hızlanır. Mobil workstation için ideal."}, {"id": "xeon_e5_2680v4", "name": "Intel Xeon E5-2680 v4", "brand": "Intel", "gen": 0, "cores": 14, "threads": 28, "singlecore": 900, "passmark": 18000, "passmark_single": 1800, "year": 2016, "tdp": 120, "category": "Workstation (Eski)", "autocad_score": 45, "revit_score": 68, "lumion_score": 35, "notes": "Düşük single-core nedeniyle AutoCAD'de yavaş. Revit render için hâlâ kullanılır."}, {"id": "xeon_w2245", "name": "Intel Xeon W-2245", "brand": "Intel", "gen": 0, "cores": 8, "threads": 16, "singlecore": 1600, "passmark": 20000, "passmark_single": 3200, "year": 2019, "tdp": 155, "category": "Workstation", "autocad_score": 75, "revit_score": 78, "lumion_score": 55, "notes": "ECC RAM desteği ile kurumsal güvenilirlik. AutoCAD için iyi."}, {"id": "ryzen5_2400g", "name": "AMD Ryzen 5 2400G", "brand": "AMD", "gen": 2, "cores": 4, "threads": 8, "singlecore": 1050, "passmark": 8500, "passmark_single": 2100, "year": 2018, "tdp": 65, "category": "Eski Sistem", "autocad_score": 44, "revit_score": 36, "lumion_score": 18, "notes": "Entegre Vega GPU ile ayrı ekran kartı olmadan temel AutoCAD çalışır."}, {"id": "ryzen5_2600", "name": "AMD Ryzen 5 2600", "brand": "AMD", "gen": 2, "cores": 6, "threads": 12, "singlecore": 1080, "passmark": 11000, "passmark_single": 2150, "year": 2018, "tdp": 65, "category": "Eski Sistem", "autocad_score": 48, "revit_score": 44, "lumion_score": 25, "notes": "6 çekirdek ile Revit'te i5-8500 seviyesinde."}, {"id": "ryzen5_3600", "name": "AMD Ryzen 5 3600", "brand": "AMD", "gen": 3, "cores": 6, "threads": 12, "singlecore": 1250, "passmark": 14000, "passmark_single": 2500, "year": 2019, "tdp": 65, "category": "Orta Seviye CAD", "autocad_score": 62, "revit_score": 58, "lumion_score": 38, "notes": "Zen 2 mimarisi ile büyük performans sıçraması. Hâlâ popüler."}, {"id": "ryzen7_3700x", "name": "AMD Ryzen 7 3700X", "brand": "AMD", "gen": 3, "cores": 8, "threads": 16, "singlecore": 1280, "passmark": 18000, "passmark_single": 2550, "year": 2019, "tdp": 65, "category": "Orta Seviye CAD", "autocad_score": 66, "revit_score": 66, "lumion_score": 42, "notes": "8 çekirdek ile Revit'te güçlü. AutoCAD için de yeterli."}, {"id": "ryzen5_5600", "name": "AMD Ryzen 5 5600", "brand": "AMD", "gen": 5, "cores": 6, "threads": 12, "singlecore": 1600, "passmark": 17500, "passmark_single": 3200, "year": 2021, "tdp": 65, "category": "Güncel Performans", "autocad_score": 76, "revit_score": 70, "lumion_score": 50, "notes": "Zen 3 ile Intel'e yakın single-core. Mükemmel fiyat/performans."}, {"id": "ryzen7_5800x", "name": "AMD Ryzen 7 5800X", "brand": "AMD", "gen": 5, "cores": 8, "threads": 16, "singlecore": 1680, "passmark": 24000, "passmark_single": 3350, "year": 2020, "tdp": 105, "category": "Güncel Performans", "autocad_score": 80, "revit_score": 78, "lumion_score": 56, "notes": "Yüksek single-core ile AutoCAD'de çok iyi. Revit için de güçlü."}, {"id": "ryzen7_7700", "name": "AMD Ryzen 7 7700", "brand": "AMD", "gen": 7, "cores": 8, "threads": 16, "singlecore": 2000, "passmark": 28000, "passmark_single": 4000, "year": 2022, "tdp": 65, "category": "Güncel Performans", "autocad_score": 88, "revit_score": 84, "lumion_score": 65, "notes": "Zen 4 mimarisi ile AutoCAD 2026 için mükemmel. DDR5 desteği."}, {"id": "ryzen9_7900x", "name": "AMD Ryzen 9 7900X", "brand": "AMD", "gen": 7, "cores": 12, "threads": 24, "singlecore": 2050, "passmark": 40000, "passmark_single": 4100, "year": 2022, "tdp": 170, "category": "Profesyonel CAD", "autocad_score": 92, "revit_score": 94, "lumion_score": 75, "notes": "12 çekirdek + yüksek single-core = hem AutoCAD hem Revit şampiyonu."}, {"id": "ryzen7_8845hs", "name": "AMD Ryzen 7 8845HS", "brand": "AMD", "gen": 8, "cores": 8, "threads": 16, "singlecore": 1900, "passmark": 26000, "passmark_single": 3800, "year": 2024, "tdp": 35, "category": "Mobil Workstation", "autocad_score": 85, "revit_score": 80, "lumion_score": 60, "notes": "Entegre Radeon 780M ile harici GPU olmadan da temel render yapılabilir."}, {"id": "ryzen_ai9_hx370", "name": "AMD Ryzen AI 9 HX 370", "brand": "AMD", "gen": 9, "cores": 12, "threads": 24, "singlecore": 2100, "passmark": 35000, "passmark_single": 4200, "year": 2024, "tdp": 28, "category": "AI/NPU Destekli", "autocad_score": 93, "revit_score": 90, "lumion_score": 72, "notes": "50 TOPS NPU ile AI araçları hızlanır. En güncel mobil platform."}, {"id": "threadripper_3960x", "name": "AMD Threadripper 3960X", "brand": "AMD", "gen": 3, "cores": 24, "threads": 48, "singlecore": 1400, "passmark": 55000, "passmark_single": 2800, "year": 2019, "tdp": 280, "category": "Workstation", "autocad_score": 70, "revit_score": 96, "lumion_score": 80, "notes": "Revit ve BIM analizleri için olağanüstü. AutoCAD'de single-core nedeniyle orta."}, {"id": "threadripper_pro_5975wx", "name": "AMD Threadripper PRO 5975WX", "brand": "AMD", "gen": 5, "cores": 32, "threads": 64, "singlecore": 1700, "passmark": 90000, "passmark_single": 3400, "year": 2022, "tdp": 280, "category": "Workstation", "autocad_score": 82, "revit_score": 99, "lumion_score": 90, "notes": "Kurumsal BIM ve büyük Revit projeleri için en güçlü seçenek."}];
+const GPU_DB = [{"id": "quadro_k620", "name": "NVIDIA Quadro K620", "brand": "NVIDIA", "vram": 2, "dx": 12, "cuda_cores": 384, "cuda_support": true, "opencl": true, "fp32": 0.79, "year": 2014, "category": "Eski Ofis/CAD", "vram_class": "Eski (2 GB)", "render_class": "2D CAD", "autocad_score": 40, "revit_score": 30, "lumion_score": 10, "notes": "Sadece 2D AutoCAD için yeterli. 3D ve render için yetersiz."}, {"id": "quadro_p620", "name": "NVIDIA Quadro P620", "brand": "NVIDIA", "vram": 2, "dx": 12, "cuda_cores": 512, "cuda_support": true, "opencl": true, "fp32": 1.39, "year": 2017, "category": "Eski Ofis/CAD", "vram_class": "Eski (2 GB)", "render_class": "2D CAD", "autocad_score": 48, "revit_score": 38, "lumion_score": 15, "notes": "Kurumsal ofislerde hâlâ yaygın. Temel 3D görüntüleme için yeterli."}, {"id": "gtx_1050ti", "name": "NVIDIA GeForce GTX 1050 Ti", "brand": "NVIDIA", "vram": 4, "dx": 12, "cuda_cores": 768, "cuda_support": true, "opencl": true, "fp32": 2.14, "year": 2016, "category": "Eski Ofis/CAD", "vram_class": "Minimum (4 GB)", "render_class": "Hafif 3D", "autocad_score": 55, "revit_score": 48, "lumion_score": 28, "notes": "4 GB VRAM ile AutoCAD 3D ve temel Revit görüntüleme yapılabilir."}, {"id": "gtx_1650", "name": "NVIDIA GeForce GTX 1650", "brand": "NVIDIA", "vram": 4, "dx": 12, "cuda_cores": 896, "cuda_support": true, "opencl": true, "fp32": 2.98, "year": 2019, "category": "Giriş Seviyesi", "vram_class": "Minimum (4 GB)", "render_class": "Hafif 3D", "autocad_score": 60, "revit_score": 52, "lumion_score": 32, "notes": "Turing mimarisi. Temel CAD ve Revit görüntüleme için yeterli."}, {"id": "gtx_1660s", "name": "NVIDIA GeForce GTX 1660 Super", "brand": "NVIDIA", "vram": 6, "dx": 12, "cuda_cores": 1408, "cuda_support": true, "opencl": true, "fp32": 5.03, "year": 2019, "category": "Orta Seviye CAD", "vram_class": "Önerilen (6 GB)", "render_class": "Orta Render", "autocad_score": 68, "revit_score": 62, "lumion_score": 48, "notes": "6 GB VRAM ile orta ölçekli Revit projeleri ve Lumion temel render."}, {"id": "rtx_2060", "name": "NVIDIA GeForce RTX 2060", "brand": "NVIDIA", "vram": 6, "dx": 12, "cuda_cores": 1920, "cuda_support": true, "opencl": true, "fp32": 6.45, "year": 2019, "category": "Orta Seviye CAD", "vram_class": "Önerilen (6 GB)", "render_class": "Orta Render", "autocad_score": 72, "revit_score": 66, "lumion_score": 55, "notes": "İlk RTX nesli. Ray tracing ve DLSS desteği. Lumion için iyi başlangıç."}, {"id": "rtx_3050", "name": "NVIDIA GeForce RTX 3050", "brand": "NVIDIA", "vram": 8, "dx": 12, "cuda_cores": 2560, "cuda_support": true, "opencl": true, "fp32": 9.11, "year": 2022, "category": "Orta Seviye CAD", "vram_class": "Önerilen (8 GB)", "render_class": "Orta Render", "autocad_score": 74, "revit_score": 68, "lumion_score": 58, "notes": "8 GB VRAM ile Lumion 2023 için iyi. Ampere mimarisi."}, {"id": "rtx_3060", "name": "NVIDIA GeForce RTX 3060", "brand": "NVIDIA", "vram": 12, "dx": 12, "cuda_cores": 3584, "cuda_support": true, "opencl": true, "fp32": 12.74, "year": 2021, "category": "Orta Seviye CAD", "vram_class": "Profesyonel (12 GB)", "render_class": "Ağır Render", "autocad_score": 78, "revit_score": 74, "lumion_score": 68, "notes": "12 GB VRAM ile büyük sahneler. Lumion 2024 için önerilen minimum."}, {"id": "rtx_4060", "name": "NVIDIA GeForce RTX 4060", "brand": "NVIDIA", "vram": 8, "dx": 12, "cuda_cores": 3072, "cuda_support": true, "opencl": true, "fp32": 15.11, "year": 2023, "category": "Profesyonel CAD/Render", "vram_class": "Önerilen (8 GB)", "render_class": "Ağır Render", "autocad_score": 84, "revit_score": 80, "lumion_score": 76, "notes": "Ada Lovelace mimarisi. DLSS 3 ve Frame Generation. Lumion 2024 için ideal."}, {"id": "rtx_4070", "name": "NVIDIA GeForce RTX 4070", "brand": "NVIDIA", "vram": 12, "dx": 12, "cuda_cores": 5888, "cuda_support": true, "opencl": true, "fp32": 29.15, "year": 2023, "category": "Profesyonel CAD/Render", "vram_class": "Profesyonel (12 GB)", "render_class": "Lumion Ultra", "autocad_score": 90, "revit_score": 86, "lumion_score": 88, "notes": "12 GB VRAM + yüksek FP32. Lumion Ultra ve D5 Render için mükemmel."}, {"id": "rtx_4080", "name": "NVIDIA GeForce RTX 4080", "brand": "NVIDIA", "vram": 16, "dx": 12, "cuda_cores": 9728, "cuda_support": true, "opencl": true, "fp32": 48.74, "year": 2022, "category": "Profesyonel CAD/Render", "vram_class": "Profesyonel (16 GB)", "render_class": "Lumion Ultra", "autocad_score": 95, "revit_score": 92, "lumion_score": 96, "notes": "En yüksek tüketici GPU'su. Lumion Ultra ve büyük BIM projeleri için."}, {"id": "rtx_a2000", "name": "NVIDIA RTX A2000", "brand": "NVIDIA", "vram": 12, "dx": 12, "cuda_cores": 3328, "cuda_support": true, "opencl": true, "fp32": 7.99, "year": 2021, "category": "Profesyonel Workstation", "vram_class": "Profesyonel (12 GB)", "render_class": "Ağır Render", "autocad_score": 82, "revit_score": 80, "lumion_score": 72, "notes": "Profesyonel sürücüler ve ECC bellek. AutoCAD sertifikalı."}, {"id": "rtx_a4000", "name": "NVIDIA RTX A4000", "brand": "NVIDIA", "vram": 16, "dx": 12, "cuda_cores": 6144, "cuda_support": true, "opencl": true, "fp32": 19.17, "year": 2021, "category": "Profesyonel Workstation", "vram_class": "Profesyonel (16 GB)", "render_class": "Lumion Ultra", "autocad_score": 92, "revit_score": 90, "lumion_score": 90, "notes": "Kurumsal CAD ve BIM için en güvenilir seçenek. AutoCAD/Revit sertifikalı."}, {"id": "rx_580", "name": "AMD Radeon RX 580", "brand": "AMD", "vram": 8, "dx": 12, "cuda_cores": 2304, "cuda_support": false, "opencl": true, "fp32": 6.17, "year": 2017, "category": "Giriş Seviyesi", "vram_class": "Önerilen (8 GB)", "render_class": "Orta Render", "autocad_score": 62, "revit_score": 56, "lumion_score": 42, "notes": "8 GB VRAM avantajı var. CUDA yok, Lumion için OpenCL kullanır (daha yavaş)."}, {"id": "rx_6600", "name": "AMD Radeon RX 6600", "brand": "AMD", "vram": 8, "dx": 12, "cuda_cores": 1792, "cuda_support": false, "opencl": true, "fp32": 8.93, "year": 2021, "category": "Giriş Seviyesi", "vram_class": "Önerilen (8 GB)", "render_class": "Orta Render", "autocad_score": 68, "revit_score": 62, "lumion_score": 50, "notes": "RDNA 2 mimarisi. AutoCAD ve Revit için iyi. Lumion'da CUDA eksikliği hissedilir."}, {"id": "rx_6700xt", "name": "AMD Radeon RX 6700 XT", "brand": "AMD", "vram": 12, "dx": 12, "cuda_cores": 2560, "cuda_support": false, "opencl": true, "fp32": 13.21, "year": 2021, "category": "Güçlü CAD/Render", "vram_class": "Profesyonel (12 GB)", "render_class": "Ağır Render", "autocad_score": 76, "revit_score": 72, "lumion_score": 62, "notes": "12 GB VRAM ile büyük sahneler. Lumion'da NVIDIA'ya göre %15-20 yavaş."}, {"id": "rx_7800xt", "name": "AMD Radeon RX 7800 XT", "brand": "AMD", "vram": 16, "dx": 12, "cuda_cores": 3840, "cuda_support": false, "opencl": true, "fp32": 37.32, "year": 2023, "category": "Güçlü CAD/Render", "vram_class": "Profesyonel (16 GB)", "render_class": "Lumion Ultra", "autocad_score": 84, "revit_score": 80, "lumion_score": 74, "notes": "RDNA 3. 16 GB VRAM ile büyük BIM projeleri. Lumion'da RTX 4070'e yakın."}, {"id": "radeon_pro_w6600", "name": "AMD Radeon PRO W6600", "brand": "AMD", "vram": 8, "dx": 12, "cuda_cores": 2048, "cuda_support": false, "opencl": true, "fp32": 10.4, "year": 2021, "category": "Profesyonel Workstation", "vram_class": "Önerilen (8 GB)", "render_class": "Ağır Render", "autocad_score": 74, "revit_score": 72, "lumion_score": 60, "notes": "AutoCAD ve Revit sertifikalı. ECC bellek. Kurumsal güvenilirlik."}];
+
+function getCPU(id) { return CPU_DB.find(c => c.id === id); }
+function getGPU(id) { return GPU_DB.find(g => g.id === id); }
+
+// RAM ve Disk çarpanları
+const RAM_MULTIPLIER = { "8": 0.75, "16": 1.0, "32": 1.1, "64": 1.15 };
+const DISK_MULTIPLIER = { "hdd": 0.80, "sata": 0.92, "nvme": 1.0, "nvme_high": 1.05 };
+const DISK_LABEL = { "hdd": "HDD (Yavaş)", "sata": "SATA SSD", "nvme": "NVMe SSD", "nvme_high": "NVMe Gen4+" };
+
+// Program tanımları
+const PROGRAMS = [
+  { id: "autocad", name: "AutoCAD", icon: "📐", weight: { cpu: 0.65, gpu: 0.20, ram: 0.10, disk: 0.05 }, field: "autocad_score" },
+  { id: "revit",   name: "Revit",   icon: "🏗️", weight: { cpu: 0.40, gpu: 0.25, ram: 0.25, disk: 0.10 }, field: "revit_score" },
+  { id: "lumion",  name: "Lumion",  icon: "🎨", weight: { cpu: 0.15, gpu: 0.65, ram: 0.12, disk: 0.08 }, field: "lumion_score" },
+  { id: "solidworks", name: "SolidWorks", icon: "⚙️", weight: { cpu: 0.50, gpu: 0.30, ram: 0.15, disk: 0.05 }, field: "autocad_score" },
+  { id: "sketchup", name: "SketchUp", icon: "🏠", weight: { cpu: 0.55, gpu: 0.25, ram: 0.12, disk: 0.08 }, field: "autocad_score" },
+  { id: "coreldraw", name: "CorelDRAW", icon: "🎭", weight: { cpu: 0.60, gpu: 0.15, ram: 0.15, disk: 0.10 }, field: "autocad_score" },
+];
+
+// RAM skoru
+function ramScore(ram) {
+  const scores = { "8": 55, "16": 80, "32": 95, "64": 100 };
+  return scores[ram] || 80;
+}
+
+// Disk skoru
+function diskScore(disk) {
+  const scores = { "hdd": 40, "sata": 70, "nvme": 90, "nvme_high": 100 };
+  return scores[disk] || 90;
+}
+
+// Skor sınıfı
+function scoreClass(s) {
+  if (s >= 80) return "excellent";
+  if (s >= 60) return "good";
+  if (s >= 40) return "medium";
+  return "poor";
+}
+function scoreLabel(s) {
+  if (s >= 80) return "Mükemmel";
+  if (s >= 60) return "İyi";
+  if (s >= 40) return "Orta";
+  return "Yetersiz";
+}
+
+let perfChartInstance = null;
+
+function analyze() {
+  const cpuId = document.getElementById("sel-cpu").value;
+  const gpuId = document.getElementById("sel-gpu").value;
+  const ram = document.querySelector("input[name='ram']:checked")?.value || "16";
+  const disk = document.querySelector("input[name='disk']:checked")?.value || "nvme";
+
+  if (!cpuId || !gpuId) {
+    alert("Lütfen işlemci ve ekran kartı seçin!");
+    return;
+  }
+
+  const cpu = getCPU(cpuId);
+  const gpu = getGPU(gpuId);
+  const rs = ramScore(ram);
+  const ds = diskScore(disk);
+
+  // Program skorlarını hesapla
+  const scores = {};
+  PROGRAMS.forEach(p => {
+    const cpuS = cpu[p.field];
+    const gpuS = gpu[p.field];
+    const raw = cpuS * p.weight.cpu + gpuS * p.weight.gpu + rs * p.weight.ram + ds * p.weight.disk;
+    scores[p.id] = Math.round(Math.min(100, raw));
+  });
+
+  // SONUÇ PANELİNİ GÖSTER
+  const panel = document.getElementById("results-panel");
+  panel.classList.remove("results-hidden");
+  panel.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  // 1. SKOR KARTLARI
+  const grid = document.getElementById("score-grid");
+  grid.innerHTML = PROGRAMS.map(p => {
+    const s = scores[p.id];
+    const cls = scoreClass(s);
+    return `<div class="score-card ${cls}">
+      <div class="program-icon">${p.icon}</div>
+      <div class="program-name">${p.name}</div>
+      <div class="score-value">${s}</div>
+      <div class="score-label">${scoreLabel(s)}</div>
+    </div>`;
+  }).join("");
+
+  // 2. CHART
+  const ctx = document.getElementById("perfChart").getContext("2d");
+  if (perfChartInstance) perfChartInstance.destroy();
+  const chartColors = scores;
+  const bgColors = PROGRAMS.map(p => {
+    const s = scores[p.id];
+    if (s >= 80) return "rgba(34,197,94,0.7)";
+    if (s >= 60) return "rgba(111,102,238,0.7)";
+    if (s >= 40) return "rgba(245,158,11,0.7)";
+    return "rgba(239,68,68,0.7)";
+  });
+  perfChartInstance = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: PROGRAMS.map(p => p.icon + " " + p.name),
+      datasets: [{
+        label: "Uyumluluk Skoru",
+        data: PROGRAMS.map(p => scores[p.id]),
+        backgroundColor: bgColors,
+        borderRadius: 8,
+        borderSkipped: false,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => " Skor: " + ctx.raw + " / 100" } } },
+      scales: {
+        y: { min: 0, max: 100, grid: { color: "#f0f0f0" }, ticks: { font: { size: 11 } } },
+        x: { grid: { display: false }, ticks: { font: { size: 11 } } }
+      }
+    }
+  });
+
+  // 3. SPEC DETAY
+  const specDiv = document.getElementById("spec-detail");
+  const cudaChip = gpu.cuda_support
+    ? `<span class="chip yes">✅ CUDA: ${gpu.cuda_cores} Çekirdek</span>`
+    : `<span class="chip no">❌ CUDA Yok</span>`;
+  const openclChip = gpu.opencl
+    ? `<span class="chip yes">✅ OpenCL</span>`
+    : `<span class="chip no">❌ OpenCL Yok</span>`;
+  const diskBadge = disk === "hdd"
+    ? `<span class="badge badge-red">🔴 HDD — Yükseltme Önerilir</span>`
+    : disk === "sata"
+    ? `<span class="badge badge-yellow">🟡 SATA SSD</span>`
+    : `<span class="badge badge-green">🟢 NVMe SSD</span>`;
+  const ramBadge = ram === "8"
+    ? `<span class="badge badge-yellow">⚠️ 8 GB — Minimum</span>`
+    : ram === "16"
+    ? `<span class="badge badge-green">✅ 16 GB — Önerilen</span>`
+    : `<span class="badge badge-green">🏆 ${ram} GB — Profesyonel</span>`;
+
+  specDiv.innerHTML = `
+    <table class="spec-table">
+      <tr><th colspan="2">İşlemci</th></tr>
+      <tr><td>Model</td><td><strong>${cpu.name}</strong></td></tr>
+      <tr><td>Marka / Nesil</td><td>${cpu.brand} — ${cpu.gen > 0 ? cpu.gen + ". Nesil" : "Xeon/Threadripper"}</td></tr>
+      <tr><td>Çekirdek / Thread</td><td>${cpu.cores} Çekirdek / ${cpu.threads} Thread</td></tr>
+      <tr><td>Tek Çekirdek (CB R23)</td><td><strong style="color:var(--primary)">${cpu.singlecore.toLocaleString()} puan</strong></td></tr>
+      <tr><td>PassMark (Çok Çekirdek)</td><td>${cpu.passmark.toLocaleString()}</td></tr>
+      <tr><td>Kategori</td><td><span class="badge badge-blue">${cpu.category}</span></td></tr>
+      <tr><td>Not</td><td style="font-size:0.82rem;color:#666">${cpu.notes}</td></tr>
+      <tr><th colspan="2">Ekran Kartı</th></tr>
+      <tr><td>Model</td><td><strong>${gpu.name}</strong></td></tr>
+      <tr><td>VRAM</td><td><strong style="color:var(--primary)">${gpu.vram} GB</strong> — ${gpu.vram_class}</td></tr>
+      <tr><td>DirectX</td><td>DirectX ${gpu.dx}</td></tr>
+      <tr><td>FP32 Performansı</td><td>${gpu.fp32} TFLOPS</td></tr>
+      <tr><td>Render Sınıfı</td><td><span class="badge badge-purple">${gpu.render_class}</span></td></tr>
+      <tr><td>API Desteği</td><td><div class="chip-row">${cudaChip}${openclChip}</div></td></tr>
+      <tr><td>Not</td><td style="font-size:0.82rem;color:#666">${gpu.notes}</td></tr>
+      <tr><th colspan="2">RAM & Depolama</th></tr>
+      <tr><td>RAM</td><td>${ramBadge}</td></tr>
+      <tr><td>Disk</td><td>${diskBadge}</td></tr>
+    </table>`;
+
+  // 4. AUTOCAD VERSİYON UYUMLULUK TABLOSU
+  const acadScore = scores.autocad;
+  const versions = [
+    { ver: "AutoCAD 2016-2018", minScore: 0, okScore: 30, goodScore: 50 },
+    { ver: "AutoCAD 2019-2021", minScore: 30, okScore: 45, goodScore: 60 },
+    { ver: "AutoCAD 2022-2023", minScore: 45, okScore: 60, goodScore: 72 },
+    { ver: "AutoCAD 2024",      minScore: 55, okScore: 68, goodScore: 78 },
+    { ver: "AutoCAD 2025",      minScore: 62, okScore: 74, goodScore: 84 },
+    { ver: "AutoCAD 2026",      minScore: 68, okScore: 80, goodScore: 90 },
+  ];
+  const vTable = document.getElementById("version-table");
+  vTable.innerHTML = `<tr><th>Versiyon</th><th>2D Çizim</th><th>3D Modelleme</th><th>Render</th><th>Genel Uyum</th></tr>` +
+    versions.map(v => {
+      function compat(threshold) {
+        if (acadScore >= v.goodScore) return `<td class="compat-full">✅ Mükemmel</td>`;
+        if (acadScore >= v.okScore)   return `<td class="compat-ok">🟡 Yeterli</td>`;
+        if (acadScore >= v.minScore)  return `<td class="compat-poor">⚠️ Sınırda</td>`;
+        return `<td class="compat-poor">❌ Yetersiz</td>`;
+      }
+      const overall = acadScore >= v.goodScore ? "compat-full" : acadScore >= v.okScore ? "compat-ok" : "compat-poor";
+      const overallText = acadScore >= v.goodScore ? "✅ Tam Uyumlu" : acadScore >= v.okScore ? "🟡 Kısmi" : "❌ Yetersiz";
+      return `<tr>
+        <td><strong>${v.ver}</strong></td>
+        ${compat(v.minScore)}
+        ${compat(v.okScore)}
+        ${compat(v.goodScore)}
+        <td class="${overall}"><strong>${overallText}</strong></td>
+      </tr>`;
+    }).join("");
+
+  // 5. DARBOĞAZ ANALİZİ
+  const bottleneckDiv = document.getElementById("bottleneck-analysis");
+  const components = [
+    { name: "CPU (AutoCAD)", score: cpu.autocad_score, icon: "🖥️" },
+    { name: "GPU (Render)",  score: gpu.lumion_score,  icon: "🎮" },
+    { name: "RAM",           score: rs,                icon: "💾" },
+    { name: "Disk",          score: ds,                icon: "💿" },
+  ];
+  const minComp = components.reduce((a, b) => a.score < b.score ? a : b);
+  const maxComp = components.reduce((a, b) => a.score > b.score ? a : b);
+  const avgScore = Math.round(components.reduce((s, c) => s + c.score, 0) / components.length);
+  const bottleneckClass = minComp.score < 40 ? "danger" : minComp.score < 60 ? "warning" : "success";
+  const bottleneckMsg = minComp.score < 40
+    ? `❌ Kritik darboğaz: <strong>${minComp.icon} ${minComp.name}</strong> (${minComp.score}/100). Bu bileşen diğerlerini ciddi şekilde yavaşlatıyor.`
+    : minComp.score < 60
+    ? `⚠️ Zayıf halka: <strong>${minComp.icon} ${minComp.name}</strong> (${minComp.score}/100). Yükseltme önerilir.`
+    : `✅ Sistem dengeli görünüyor. En güçlü bileşen: ${maxComp.icon} ${maxComp.name} (${maxComp.score}/100).`;
+
+  bottleneckDiv.innerHTML = `
+    <div class="bottleneck-box ${bottleneckClass}">
+      <div class="bottleneck-title">${bottleneckMsg}</div>
+      <div style="display:flex; gap:16px; flex-wrap:wrap; margin-top:12px;">
+        ${components.map(c => `
+          <div style="text-align:center; min-width:80px;">
+            <div style="font-size:1.5rem;">${c.icon}</div>
+            <div style="font-size:0.78rem; color:#666; margin:2px 0;">${c.name}</div>
+            <div style="font-size:1.3rem; font-weight:900; color:${c.score >= 70 ? '#22c55e' : c.score >= 50 ? '#f59e0b' : '#ef4444'}">${c.score}</div>
+          </div>`).join("")}
+      </div>
+    </div>`;
+
+  // 6. ÖNERİLER
+  const recList = document.getElementById("recommendations");
+  const recs = [];
+
+  if (cpu.autocad_score < 55) recs.push({ icon: "🖥️", text: `<strong>CPU Yükseltme:</strong> Mevcut işlemciniz (${cpu.name}) AutoCAD için yetersiz. En az Intel Core i5-12400 veya AMD Ryzen 5 5600 önerilir.` });
+  if (cpu.singlecore < 1400) recs.push({ icon: "⚡", text: `<strong>Tek Çekirdek Performansı:</strong> AutoCAD tek çekirdek ağırlıklı çalışır. Cinebench R23 single-core skoru 1400+ olan bir CPU tercih edin.` });
+  if (gpu.vram < 6) recs.push({ icon: "🎮", text: `<strong>GPU VRAM Yetersiz (${gpu.vram} GB):</strong> 3D modelleme ve render için en az 6 GB, Lumion için 8 GB+ VRAM önerilir.` });
+  if (!gpu.cuda_support) recs.push({ icon: "⚠️", text: `<strong>CUDA Yok:</strong> Lumion ve D5 Render, NVIDIA CUDA ile çok daha hızlı çalışır. NVIDIA RTX serisi bir GPU düşünebilirsiniz.` });
+  if (ram === "8") recs.push({ icon: "💾", text: `<strong>RAM Yükseltme (8→16 GB):</strong> Revit ve büyük AutoCAD projeleri için 16 GB RAM minimum gereksinimdir.` });
+  if (disk === "hdd") recs.push({ icon: "💿", text: `<strong>Kritik: HDD → SSD Yükseltme:</strong> HDD kullanımı program açılış sürelerini 3-5 kat yavaşlatır. En az SATA SSD, tercihen NVMe SSD kullanın.` });
+  if (gpu.lumion_score < 50 && scores.lumion < 50) recs.push({ icon: "🎨", text: `<strong>Lumion için GPU Yükseltme:</strong> Lumion GPU bağımlı bir programdır. En az NVIDIA RTX 3060 (12 GB) önerilir.` });
+  if (cpu.revit_score < 60 && cpu.cores < 8) recs.push({ icon: "🏗️", text: `<strong>Revit için Çekirdek Sayısı:</strong> Revit render ve analiz işlemleri için 8+ çekirdek önerilir. AMD Ryzen 7 veya Intel Core i7 düşünebilirsiniz.` });
+
+  if (recs.length === 0) recs.push({ icon: "🎉", text: `<strong>Harika Sistem!</strong> Seçtiğiniz bileşenler CAD ve render çalışmaları için çok iyi görünüyor. Kurulum veya optimizasyon için bizi arayabilirsiniz.` });
+
+  recList.innerHTML = recs.map(r => `<li><span class="rec-icon">${r.icon}</span><span>${r.text}</span></li>`).join("");
+}
+</script>
+
+</body>
+</html>
