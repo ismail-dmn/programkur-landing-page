@@ -16,7 +16,7 @@ const floatingCards = [
   { icon: Zap, label: "Aynı Gün Kurulum", className: "left-0 top-10", delay: 0.2 },
   { icon: Clock, label: "Ortalama 15 dk Yanıt", className: "right-0 top-24", delay: 0.35 },
   { icon: Wifi, label: "Güvenli Uzaktan Bağlantı", className: "left-2 bottom-24", delay: 0.5 },
-  { icon: ShieldCheck, label: "7 Gün Destek", className: "right-2 bottom-10", delay: 0.65 },
+  { icon: ShieldCheck, label: "30 Gün Destek", className: "right-2 bottom-10", delay: 0.65 },
 ]
 
 const softwareTabs = ["AutoCAD", "Lumion", "Revit", "SolidWorks", "Office", "Adobe"]
