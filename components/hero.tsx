@@ -3,12 +3,16 @@
 import { motion } from "framer-motion"
 import {
   MessageCircle,
-  PlayCircle,
+  Phone,
+  FileText,
   ShieldCheck,
   Clock,
   Zap,
   Wifi,
   Star,
+  Wrench,
+  MapPin,
+  CalendarCheck,
 } from "lucide-react"
 import { whatsappLink } from "@/lib/utils"
 
@@ -16,7 +20,15 @@ const floatingCards = [
   { icon: Zap, label: "Aynı Gün Kurulum", className: "left-0 top-10", delay: 0.2 },
   { icon: Clock, label: "Ortalama 15 dk Yanıt", className: "right-0 top-24", delay: 0.35 },
   { icon: Wifi, label: "Güvenli Uzaktan Bağlantı", className: "left-2 bottom-24", delay: 0.5 },
-  { icon: ShieldCheck, label: "30 Gün Destek", className: "right-2 bottom-10", delay: 0.65 },
+  { icon: ShieldCheck, label: "Aynı Gün Destek", className: "right-2 bottom-10", delay: 0.65 },
+]
+
+const trustBadges = [
+  { icon: Star, label: "4.9 Puan" },
+  { icon: Wrench, label: "7000+ Kurulum" },
+  { icon: CalendarCheck, label: "6+ Yıl Tecrübe" },
+  { icon: MapPin, label: "Türkiye Geneli Hizmet" },
+  { icon: Clock, label: "Aynı Gün Destek" },
 ]
 
 const softwareTabs = ["AutoCAD", "Lumion", "Revit", "SolidWorks", "Office", "Adobe"]
@@ -57,9 +69,9 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.05 }}
             className="mt-6 text-4xl font-semibold leading-[1.05] tracking-tight text-navy text-balance sm:text-5xl lg:text-6xl"
           >
-            Türkiye&apos;nin Uzaktan{" "}
+            Bilgisayarınıza Uzaktan{" "}
             <span className="bg-gradient-to-r from-primary to-cyan bg-clip-text text-transparent">
-              Yazılım Kurulum Uzmanı
+              Program Kurulumu
             </span>
           </motion.h1>
 
@@ -69,15 +81,26 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty"
           >
-            AutoCAD, Revit, Lumion, SolidWorks, Office, Adobe, yazıcı ve tarayıcı yazılımları
-            dahil 20&apos;den fazla program için aynı gün uzaktan kurulum ve teknik destek.
+            AutoCAD, Revit, Lumion, SolidWorks, Microsoft Office, Microsoft 365, Adobe Creative
+            Cloud ve daha fazlası için aynı gün uzaktan kurulum ve teknik destek.
           </motion.p>
+
+          {/* Pricing */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-8 inline-flex items-baseline gap-2.5 rounded-2xl border border-border bg-card px-5 py-3.5 shadow-sm"
+          >
+            <span className="text-3xl font-bold tracking-tight text-navy sm:text-4xl">1000 TL</span>
+            <span className="text-sm font-medium text-muted-foreground">Tek Seferlik Kurulum</span>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
+            className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center"
           >
             <a
               href={whatsappLink("Merhaba, yazılım kurulumu için hemen destek almak istiyorum.")}
@@ -86,37 +109,43 @@ export function Hero() {
               className="group inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:bg-primary-600 hover:shadow-xl hover:shadow-primary/30"
             >
               <MessageCircle className="size-5 transition-transform group-hover:scale-110" aria-hidden="true" />
-              WhatsApp Destek Al
+              WhatsApp
             </a>
             <a
-              href="#nasil-calisir"
+              href="tel:+905385050002"
               className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-background px-6 py-3.5 text-base font-semibold text-navy transition-all hover:border-navy/20 hover:bg-muted"
             >
-              <PlayCircle className="size-5 text-primary" aria-hidden="true" />
-              Nasıl Çalışıyor?
+              <Phone className="size-5 text-primary" aria-hidden="true" />
+              Telefon
+            </a>
+            <a
+              href="#fiyat"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-background px-6 py-3.5 text-base font-semibold text-navy transition-all hover:border-navy/20 hover:bg-muted"
+            >
+              <FileText className="size-5 text-primary" aria-hidden="true" />
+              Teklif Al
             </a>
           </motion.div>
 
-          <motion.div
+          <motion.ul
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted-foreground"
+            className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-muted-foreground"
           >
-            <div className="flex items-center gap-1.5">
-              <div className="flex">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="size-4 fill-cyan text-cyan" aria-hidden="true" />
-                ))}
-              </div>
-              <span className="font-medium text-navy">4.9/5</span>
-              <span>· 200+ kurulum</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <ShieldCheck className="size-4 text-primary" aria-hidden="true" />
-              İşlem sonrası ödeme
-            </div>
-          </motion.div>
+            {trustBadges.map((badge) => {
+              const Icon = badge.icon
+              return (
+                <li key={badge.label} className="flex items-center gap-1.5">
+                  <Icon
+                    className={`size-4 ${badge.icon === Star ? "fill-cyan text-cyan" : "text-primary"}`}
+                    aria-hidden="true"
+                  />
+                  <span className="font-medium text-navy">{badge.label}</span>
+                </li>
+              )
+            })}
+          </motion.ul>
         </div>
 
         {/* Visual */}
