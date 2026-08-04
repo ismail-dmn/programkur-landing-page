@@ -57,7 +57,7 @@ export function SiteHeader() {
           ))}
           <li>
             <Link
-              href="/makaleler/sistem-performans-sihirbazi.html"
+              href="/makaleler/sistem-performans-sihirbazi"
               className="animate-blink ml-2 flex items-center gap-1.5 rounded-lg bg-primary/10 px-3.5 py-2 text-sm font-bold text-primary border border-primary/20 hover:bg-primary hover:text-white transition-all"
             >
               <span>Sihirbaz</span>
@@ -111,7 +111,7 @@ export function SiteHeader() {
             ))}
             <li>
               <Link
-                href="/makaleler/sistem-performans-sihirbazi.html"
+                href="/makaleler/sistem-performans-sihirbazi"
                 onClick={() => setOpen(false)}
                 className="animate-blink flex items-center justify-center gap-2 rounded-xl bg-primary/10 border border-primary/20 px-4 py-3 text-base font-bold text-primary"
               >
